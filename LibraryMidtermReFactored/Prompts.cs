@@ -11,7 +11,7 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Welcome the Online Library Catalog");
         }
 
-        public static void SearchorAdd()
+        public static void AskToSearchorAdd()
         {
 
             Console.WriteLine("Would you like to search or add to the database");
@@ -24,6 +24,12 @@ namespace LibraryMidtermReFactored
             else if (searchOrAddResonse == "add")
             {
                 AskWhichMediaToAdd();
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid response");
+                AskToSearchorAdd();
             }
 
 
@@ -69,12 +75,13 @@ namespace LibraryMidtermReFactored
                 List<Book> bookInfo = BookMethods.BookTxtToList();
                 Console.WriteLine("Would you like to seach by title, author, or show all");
                 string userSearchPreference = Console.ReadLine();
-                if (userSearchPreference == "all")
+                if (userSearchPreference == "all" || userMediaPreference == "show all")
                 {
                     BookMethods.PrintBookList(bookInfo);
                     AskToSearchAgain(); // If they enter no in this method it will ask them to check out
-                                        //If they enter yes to check out, it will then lead them to a different method that asks for the title to check out
-                                        //if their input matches with a title, it will them give the due date (methodception)
+                                        //If they enter yes to check out, it will then lead them to a different method that asks which media they want to check out
+                                        //Then based off that response, it takes them to a method that has them enter the title they want to check out
+                                        //if their input matches with a title, it will them give the due date, (methodception) I need to add validation if it doesn't match
 
                 }
 
@@ -98,7 +105,7 @@ namespace LibraryMidtermReFactored
                 List<Music> musicInfo = MusicMethods.MusicTxtToList();
                 Console.WriteLine("Would you like to seach by album title, artist, or show all");
                 string userSearchPreference = Console.ReadLine();
-                if (userSearchPreference == "all")
+                if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MusicMethods.PrintMusicList(musicInfo);
                     AskToSearchAgain();
@@ -123,7 +130,7 @@ namespace LibraryMidtermReFactored
                 List<Movie> movieInfo = MovieMethods.MovieTxtToList();
                 Console.WriteLine("Would you like to seach by movie title, director, or show all");
                 string userSearchPreference = Console.ReadLine();
-                if (userSearchPreference == "all")
+                if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MovieMethods.PrintMovieList(movieInfo);
                     AskToSearchAgain();
@@ -195,10 +202,9 @@ namespace LibraryMidtermReFactored
 
             }
 
-
-
             else if (userCheckOutResponse == "no")
             {
+                //Not sure if we should have them exit here or prompt something else
                 Console.WriteLine("Have a good day!");
                 System.Environment.Exit(1);
             }
@@ -210,7 +216,7 @@ namespace LibraryMidtermReFactored
             }
         }
 
-        public static string WhichMediaToCheckOut()
+        public static string WhichMediaToCheckOut() //Gets called in the AskToCheckOut Method
         {
             Console.WriteLine("Are you checking out a book, movie, or album");
             string userCheckOutType = Console.ReadLine();
