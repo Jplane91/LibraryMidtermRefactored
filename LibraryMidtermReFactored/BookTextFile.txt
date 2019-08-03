@@ -1,0 +1,6 @@
+Moby Dick|1851|Fiction|Book|in|585|Herman Melville
+The Adventures of Huckleberry Finn|1884|Fiction|Book|in|366|Mark Twain
+Alice's Adventure in Wonderland|1862|Fiction|Book|in|200|Lewis Carrol
+A Brief History of Time|1988|Non-Fiction|Book|in|256|Stephen Hawking
+Sapiens: A Brief History of Humankind|2011|Non-Fiction|Book|in|443|Yuval Noah Harari
+East of Eden|1962|Fiction|Book|In|1962|John Steinbeck

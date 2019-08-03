@@ -1,0 +1,10 @@
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermRedo.deps.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermRedo.runtimeconfig.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermRedo.runtimeconfig.dev.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermRedo.dll
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermRedo.pdb
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermRedo.csprojAssemblyReference.cache
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermRedo.AssemblyInfoInputs.cache
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermRedo.AssemblyInfo.cs
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermRedo.dll
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermRedo.pdb

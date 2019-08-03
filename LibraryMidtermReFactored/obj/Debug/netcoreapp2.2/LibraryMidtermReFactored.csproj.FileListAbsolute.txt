@@ -1,0 +1,10 @@
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermReFactored.deps.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermReFactored.runtimeconfig.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermReFactored.runtimeconfig.dev.json
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermReFactored.dll
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/bin/Debug/netcoreapp2.2/LibraryMidtermReFactored.pdb
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermReFactored.csprojAssemblyReference.cache
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermReFactored.AssemblyInfoInputs.cache
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermReFactored.AssemblyInfo.cs
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermReFactored.dll
+/Users/mac/Projects/LibraryMidtermRedo/LibraryMidtermRedo/obj/Debug/netcoreapp2.2/LibraryMidtermReFactored.pdb
