@@ -48,11 +48,11 @@ namespace LibraryMidtermReFactored
         public static void SearchMusicTitle(List<Music> list)
         {
             Console.WriteLine("Enter keywod for the title");
-            string userMusicTitleSearch = Console.ReadLine();
+            string userMusicTitleSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var music in list)
             {
-                if(music.Title.Contains(userMusicTitleSearch))
+                if(music.Title.ToLower().Contains(userMusicTitleSearch))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating + "\nYear Released: " + music.Year);
@@ -64,11 +64,11 @@ namespace LibraryMidtermReFactored
         public static void SearchMusicArtist(List<Music> list)
         {
             Console.WriteLine("Enter keyword for the artist");
-            string userArtistSearch = Console.ReadLine();
+            string userArtistSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var music in list)
             {
-                if (music.Artist.Contains(userArtistSearch))
+                if (music.Artist.ToLower().Contains(userArtistSearch))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating + "\nYear Released: " + music.Year);
@@ -89,7 +89,7 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Enter Release Date");
             string userYear = Console.ReadLine();
 
-            Console.WriteLine("Enter Movie Rating");
+            Console.WriteLine("Enter Music Rating");
             string userMusicRating = Console.ReadLine();
 
             Console.WriteLine("Enter Genre");

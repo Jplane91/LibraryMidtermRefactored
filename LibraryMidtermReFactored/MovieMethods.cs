@@ -48,11 +48,11 @@ namespace LibraryMidtermReFactored
         public static void SearchMovieTitle(List<Movie> list)
         {
             Console.WriteLine("Enter keyword for the title");
-            string userMovieTitleSearch = Console.ReadLine();
+            string userMovieTitleSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var movie in list)
             {
-                if(movie.Title.Contains(userMovieTitleSearch))
+                if(movie.Title.ToLower().Contains(userMovieTitleSearch))
                 {
                     Console.WriteLine();
                     Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating + "\nYear Released: " + movie.Year);
@@ -64,11 +64,11 @@ namespace LibraryMidtermReFactored
         public static void SearchMovieDirector(List<Movie> list)
         {
             Console.WriteLine("Enter keywod for the director");
-            string userDirectorSearch = Console.ReadLine();
+            string userDirectorSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var movie in list)
             {
-                if (movie.Director.Contains(userDirectorSearch))
+                if (movie.Director.ToLower().Contains(userDirectorSearch)) 
                 {
                     Console.WriteLine();
                     Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating + "\nYear Released: " + movie.Year);

@@ -15,7 +15,7 @@ namespace LibraryMidtermReFactored
         {
 
             Console.WriteLine("Would you like to search or add to the database");
-            string searchOrAddResonse = Console.ReadLine();
+            string searchOrAddResonse = Console.ReadLine().ToLower();
             if (searchOrAddResonse == "search")
             {
                 MovieBookorMusic();
@@ -42,7 +42,7 @@ namespace LibraryMidtermReFactored
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
 
             Console.WriteLine("Which media would you like to add to the database?(book, movie, or music)");
-            string mediaToAddResponse = Console.ReadLine();
+            string mediaToAddResponse = Console.ReadLine().ToLower();
             if(mediaToAddResponse == "book")
             {
                 BookMethods.AddToBookList(bookInfo);
@@ -68,13 +68,13 @@ namespace LibraryMidtermReFactored
         public static void MovieBookorMusic()
         {
             Console.WriteLine("Are you looking for a book, movie, or album?");
-            string userMediaPreference = Console.ReadLine();
+            string userMediaPreference = Console.ReadLine().ToLower();
 
             if (userMediaPreference == "book")
             {
                 List<Book> bookInfo = BookMethods.BookTxtToList();
                 Console.WriteLine("Would you like to seach by title, author, or show all");
-                string userSearchPreference = Console.ReadLine();
+                string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "all" || userMediaPreference == "show all")
                 {
                     BookMethods.PrintBookList(bookInfo);
@@ -104,7 +104,7 @@ namespace LibraryMidtermReFactored
             {
                 List<Music> musicInfo = MusicMethods.MusicTxtToList();
                 Console.WriteLine("Would you like to seach by album title, artist, or show all");
-                string userSearchPreference = Console.ReadLine();
+                string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MusicMethods.PrintMusicList(musicInfo);
@@ -129,14 +129,14 @@ namespace LibraryMidtermReFactored
             {
                 List<Movie> movieInfo = MovieMethods.MovieTxtToList();
                 Console.WriteLine("Would you like to seach by movie title, director, or show all");
-                string userSearchPreference = Console.ReadLine();
+                string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MovieMethods.PrintMovieList(movieInfo);
                     AskToSearchAgain();
                 }
 
-                else if (userSearchPreference == "title")
+                else if (userSearchPreference == "title" || userMediaPreference == "movie title")
                 {
                     MovieMethods.SearchMovieTitle(movieInfo);
                     AskToSearchAgain();
@@ -152,7 +152,7 @@ namespace LibraryMidtermReFactored
 
         public static void AskToSearchAgain()
         {
-            Console.WriteLine("Would you like to search again");
+            Console.WriteLine("Would you like to search again?(yes or no)");
             string searchAgainResponse = Console.ReadLine().ToLower();
             if (searchAgainResponse == "yes")
             {
@@ -179,7 +179,7 @@ namespace LibraryMidtermReFactored
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
             List<Book> bookInfo = BookMethods.BookTxtToList();
 
-            Console.WriteLine("Would you like to check out a title");
+            Console.WriteLine("Would you like to check out a title?(yes or no)");
             string userCheckOutResponse = Console.ReadLine().ToLower();
             if (userCheckOutResponse == "yes")
             {
@@ -218,8 +218,8 @@ namespace LibraryMidtermReFactored
 
         public static string WhichMediaToCheckOut() //Gets called in the AskToCheckOut Method
         {
-            Console.WriteLine("Are you checking out a book, movie, or album");
-            string userCheckOutType = Console.ReadLine();
+            Console.WriteLine("Are you checking out a book, movie, or album?(enter book, movie, or album)");
+            string userCheckOutType = Console.ReadLine().ToLower();
             if (userCheckOutType == "book" || userCheckOutType == "movie" || userCheckOutType == "album")
             {
                 return userCheckOutType;
@@ -241,10 +241,10 @@ namespace LibraryMidtermReFactored
             String.Format("{0:M/d/yyyy}", answer);
 
             Console.WriteLine("Which title would you like to check out");
-            string userTitleToCheckOut = Console.ReadLine();
+            string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var book in bookList)
             {
-                if (userTitleToCheckOut == book.Title)
+                if (userTitleToCheckOut == book.Title.ToLower())
                 {
                     Console.WriteLine("You have checked out " + book.Title);
                     if (book.Status == "in")
@@ -270,7 +270,7 @@ namespace LibraryMidtermReFactored
             string userTitleToCheckOut = Console.ReadLine();
             foreach (var movie in movieList)
             {
-                if (userTitleToCheckOut == movie.Title)
+                if (userTitleToCheckOut == movie.Title.ToLower())
                 {
                     Console.WriteLine("You have checked out " + movie.Title);
                     if (movie.Status == "in")
@@ -293,10 +293,10 @@ namespace LibraryMidtermReFactored
                 String.Format("{0:M/d/yyyy}", answer);
 
                 Console.WriteLine("Which title would you like to check out");
-                string userTitleToCheckOut = Console.ReadLine();
+                string userTitleToCheckOut = Console.ReadLine().ToLower();
                 foreach (var music in musicList)
                 {
-                    if (userTitleToCheckOut == music.Title)
+                    if (userTitleToCheckOut == music.Title.ToLower())
                     {
                         Console.WriteLine("You have checked out " + music.Title);
                         if (music.Status == "in")

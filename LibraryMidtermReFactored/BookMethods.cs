@@ -46,11 +46,11 @@ namespace LibraryMidtermReFactored
         public static void SearchBookTitle(List<Book> list)
         {
             Console.WriteLine("Enter keyword for the title");
-            string userBookTitleSearch = Console.ReadLine();
+            string userBookTitleSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var book in list)
             {
-                if(book.Title.Contains(userBookTitleSearch))
+                if(book.Title.ToLower().Contains(userBookTitleSearch))
                 {
                      Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
                 }
@@ -61,11 +61,11 @@ namespace LibraryMidtermReFactored
         public static void SearchBookAuthor(List<Book> list)
         {
             Console.WriteLine("Enter keywod for the author");
-            string userAuthorSearch = Console.ReadLine();
+            string userAuthorSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var book in list)
             {
-                if (book.Author.Contains(userAuthorSearch))
+                if (book.Author.ToLower().Contains(userAuthorSearch))
                 {
                     Console.WriteLine("Author: " + book.Author + "\nTitle: " + book.Title +  "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
                 }
@@ -112,32 +112,32 @@ namespace LibraryMidtermReFactored
             File.WriteAllLines(filepath, output);
         }
 
-        public static string[] RewriteCheckStatus(string[] words)
-        {
-            DateTime today = DateTime.Now;
-            DateTime answer = today.AddDays(14);
-            String.Format("{0:M/d/yyyy}", answer);
-            if (words[4] == "in")
-            {
-                Console.WriteLine($"You have checked this out until {answer}");
-                words[4].Replace("in", $"checked out until {answer}");
-            }
-            else
-            {
-                Console.WriteLine("Are you checking this in?");
-                string response = Console.ReadLine();
-                if (response == "y")
-                {
-                    Console.WriteLine("Thank you for checking this in.");
-                    words[4].Replace(words[4], "in");
-                }
-                else if (response == "n")
-                {
-                    Console.WriteLine("This book is currently checked out");//would like to add the date it is checked out until
-                }//needs validation
-            }
-            return words;
-        }
+        //public static string[] RewriteCheckStatus(string[] words)
+        //{
+        //    DateTime today = DateTime.Now;
+        //    DateTime answer = today.AddDays(14);
+        //    String.Format("{0:M/d/yyyy}", answer);
+        //    if (words[4] == "in")
+        //    {
+        //        Console.WriteLine($"You have checked this out until {answer}");
+        //        words[4].Replace("in", $"checked out until {answer}");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine("Are you checking this in?");
+        //        string response = Console.ReadLine();
+        //        if (response == "y")
+        //        {
+        //            Console.WriteLine("Thank you for checking this in.");
+        //            words[4].Replace(words[4], "in");
+        //        }
+        //        else if (response == "n")
+        //        {
+        //            Console.WriteLine("This book is currently checked out");//would like to add the date it is checked out until
+        //        }//needs validation
+        //    }
+        //    return words;
+        //}
 
 
     }
