@@ -13,7 +13,7 @@ namespace LibraryMidtermReFactored
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
 
             Prompts.Intro();
-            Prompts.MovieBookorMusic();
+            Prompts.MovieBookorMusic(); //I only have book option working all the way through right now
 
             //Uncomment to Try Out
             //BookMethods.AddToBookList(bookInfo);

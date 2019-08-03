@@ -111,7 +111,34 @@ namespace LibraryMidtermReFactored
 
             File.WriteAllLines(filepath, output);
         }
-            
+
+        public static string[] RewriteCheckStatus(string[] words)
+        {
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(14);
+            String.Format("{0:M/d/yyyy}", answer);
+            if (words[4] == "in")
+            {
+                Console.WriteLine($"You have checked this out until {answer}");
+                words[4].Replace("in", $"checked out until {answer}");
+            }
+            else
+            {
+                Console.WriteLine("Are you checking this in?");
+                string response = Console.ReadLine();
+                if (response == "y")
+                {
+                    Console.WriteLine("Thank you for checking this in.");
+                    words[4].Replace(words[4], "in");
+                }
+                else if (response == "n")
+                {
+                    Console.WriteLine("This book is currently checked out");//would like to add the date it is checked out until
+                }//needs validation
+            }
+            return words;
+        }
+
 
     }
 
