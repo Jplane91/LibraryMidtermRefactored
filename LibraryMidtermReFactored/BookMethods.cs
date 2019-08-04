@@ -40,7 +40,7 @@ namespace LibraryMidtermReFactored
             foreach(var book in list)
             {
                 Console.WriteLine();
-                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
+                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year + "\nStatus: " + book.Status);
             }
         }
         public static void SearchBookTitle(List<Book> list)
@@ -52,7 +52,7 @@ namespace LibraryMidtermReFactored
             {
                 if(book.Title.ToLower().Contains(userBookTitleSearch))
                 {
-                     Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
+                     Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year + "\nStatus: " + book.Status);
                 }
                 
             }
@@ -68,7 +68,7 @@ namespace LibraryMidtermReFactored
             {
                 if (book.Author.ToLower().Contains(userAuthorSearch))
                 {
-                    Console.WriteLine("Author: " + book.Author + "\nTitle: " + book.Title +  "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
+                    Console.WriteLine("Author: " + book.Author + "\nTitle: " + book.Title +  "\nPages: " + book.Pages + "\nYear Published: " + book.Year +"\nStatus: " + book.Status);
                 }
             }
         }

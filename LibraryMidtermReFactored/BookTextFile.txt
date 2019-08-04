@@ -8,3 +8,4 @@ Sirens of Titan|1959|Science Fiction|Book|in|340|Kurt Vonnegut
 The Great Gatsby|1925|Classic Lit|Book|in|180|F Scott Fitzgerald
 Harry Potter and the Sorcerer's Stone|1997|Young Adult|Book|in|336|JK Rowling
 The Brother's Karamazov|1880|Classic Lit|Book|in|824|Fyodor Dostoevsky
+Blood Meridian|1985|Western|Book|in|337|Cormac McCarthy

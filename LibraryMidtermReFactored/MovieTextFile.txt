@@ -1,8 +1,12 @@
-A Night at the Roxbury|1998|Comedy|Movie|in|John Fortenberry|Rated PG-13
-Star Wars: A New Hope|1977|Sci-Fi|Movie|in|George Lucas|Rated PG
-Jaws|1975|Horror|Movie|in|Steven Spielberg|Rated PG
-The Godfather|1972|Crime Drama|Movie|in|Francis Ford Coppola|Rated R
-The Dark Knight|2008|Superhero|Movie|in|Christopher Nolan|Rated PG-13
-2001|1968|Sci-Fi|Movie|in|Stanley Kubrick|PG
-There Will Be Blood|2007|Drama|Movie|in|Paul Thomas Anderson|R
-Boogie Nights|1997|Drama|Movie|in|Paul Thomas Anderson|R
+A Night at the Roxbury|1998|Comedy|Movie|in|John Fortenberry|Rated PG-13|6.2
+Star Wars: A New Hope|1977|Sci-Fi|Movie|in|George Lucas|Rated PG|8.6
+Jaws|1975|Horror|Movie|in|Steven Spielberg|Rated PG|8.0
+The Godfather|1972|Crime Drama|Movie|in|Francis Ford Coppola|Rated R|9.2
+The Dark Knight|2008|Superhero|Movie|in|Christopher Nolan|Rated PG-13|9.0
+2001|1968|Sci-Fi|Movie|in|Stanley Kubrick|PG|8.3
+There Will Be Blood|2007|Drama|Movie|in|Paul Thomas Anderson|R|8.2
+Boogie Nights|1997|Drama|Movie|in|Paul Thomas Anderson|R|7.9
+Pulp Fiction|1994|Drama|Movie|in|Quentin Tarantino|R|8.9
+Drive|2011|Thriller|Movie|in|Nicolas Winding Refn|R|7.8
+The Big Lebowski|1998|Comedy|Movie|in|Joel Coen|R|8.1
+Lord of the Rings: Fellowship of the Ring|2001|Fantasy|Movie|in|Peter Jackson|PG-13|8.8

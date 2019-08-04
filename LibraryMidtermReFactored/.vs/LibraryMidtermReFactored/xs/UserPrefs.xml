@@ -1,25 +1,25 @@
 ﻿<Properties StartupConfiguration="{6158A5A3-9211-4C60-8FBC-398890B968BF}|Default">
   <MonoDevelop.Ide.ItemProperties.LibraryMidtermReFactored PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BookMethods.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MovieMethods.cs">
     <Files>
       <File FileName="Prompts.cs" Line="346" Column="1" />
       <File FileName="Media.cs" />
-      <File FileName="Program.cs" />
-      <File FileName="Movie.cs" />
-      <File FileName="Book.cs" />
-      <File FileName="BookMethods.cs" Line="47" Column="10" />
-      <File FileName="MovieMethods.cs" Line="63" Column="1" />
-      <File FileName="BookTextFile.txt" Line="6" Column="33" />
-      <File FileName="MusicTextFile.txt" Line="5" Column="44" />
-      <File FileName="MusicMethods.cs" Line="50" Column="44" />
-      <File FileName="MovieTextFile.txt" Line="9" Column="1" />
+      <File FileName="Program.cs" Line="11" Column="1" />
+      <File FileName="Movie.cs" Line="8" Column="41" />
+      <File FileName="Book.cs" Line="1" Column="1" />
+      <File FileName="BookMethods.cs" Line="45" Column="10" />
+      <File FileName="MovieMethods.cs" Line="123" Column="21" />
+      <File FileName="BookTextFile.txt" Line="11" Column="15" />
+      <File FileName="MusicTextFile.txt" Line="9" Column="1" />
+      <File FileName="MusicMethods.cs" Line="70" Column="14" />
+      <File FileName="MovieTextFile.txt" Line="12" Column="88" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="LibraryMidtermReFactored" expanded="True">
             <Node name="LibraryMidtermReFactored" expanded="True">
-              <Node name="BookMethods.cs" selected="True" />
+              <Node name="MovieMethods.cs" selected="True" />
             </Node>
           </Node>
         </State>

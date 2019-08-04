@@ -5,6 +5,7 @@ namespace LibraryMidtermReFactored
     {
         public string Director { get; set; }
         public string Rating { get; set; }
+        public string IMDB { get; set; }
 
 
         public Movie() : base()
@@ -12,7 +13,7 @@ namespace LibraryMidtermReFactored
 
         }
 
-        public Movie(string title, string year, string genre, string mediaType, string director, string rating, string status)
+        public Movie(string title, string year, string genre, string mediaType, string director, string rating, string status, int imdb)
             : base(title, year, genre, mediaType, status)
         {
 

@@ -26,6 +26,7 @@ namespace LibraryMidtermReFactored
                 newMovie.Status = entries[4];
                 newMovie.Director = entries[5];
                 newMovie.Rating = entries[6];
+                newMovie.IMDB = entries[7];
 
                 movieInfo.Add(newMovie);
             }
@@ -41,7 +42,8 @@ namespace LibraryMidtermReFactored
             foreach(var movie in list)
             {
                 Console.WriteLine();
-                Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating + "\nYear Released: " + movie.Year);
+                Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating +
+                    "\nYear Released: " + movie.Year + "\nIMDB: " + movie.IMDB + "\nStatus: " + movie.Status);
             }
         }
 
@@ -55,7 +57,8 @@ namespace LibraryMidtermReFactored
                 if(movie.Title.ToLower().Contains(userMovieTitleSearch))
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating + "\nYear Released: " + movie.Year);
+                    Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating +
+                        "\nYear Released: " + movie.Year + "\nIMDB: " + movie.IMDB + "\nStatus: " + movie.Status);
                 }
             }
                 
@@ -71,7 +74,8 @@ namespace LibraryMidtermReFactored
                 if (movie.Director.ToLower().Contains(userDirectorSearch)) 
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating + "\nYear Released: " + movie.Year);
+                    Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating +
+                        "\nYear Released: " + movie.Year + "\nIMDB: " + movie.IMDB + "\nStatus: " + movie.Status);
                 }
             }
         }
@@ -95,6 +99,9 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Enter Genre");
             string userMovieGenre = Console.ReadLine();
 
+            Console.WriteLine("Enter IMDB Score");
+            string userMovieIMDB = Console.ReadLine();
+
 
             list.Add(new Movie
             {
@@ -104,13 +111,16 @@ namespace LibraryMidtermReFactored
                 MediaType = "Movie",
                 Status = "in",
                 Director= userMovieDirector,
-                Rating = userMovieRating
+                Rating = userMovieRating,
+                IMDB = userMovieIMDB
             });
 
             List<string> output = new List<string>();
             foreach (var movie in list)
             {
-                output.Add($"{ movie.Title}|{movie.Year}|{movie.Genre}|{movie.MediaType}|{movie.Status}|{movie.Director}|{movie.Rating}");
+                output.Add($"{ movie.Title}|{movie.Year}|{movie.Genre}|{movie.MediaType}" +
+                    $"|{movie.Status}|{movie.Director}|{movie.Rating}|{movie.IMDB}");
+                    
             }
 
             File.WriteAllLines(filepath, output);
