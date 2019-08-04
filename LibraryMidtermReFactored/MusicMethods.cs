@@ -47,7 +47,7 @@ namespace LibraryMidtermReFactored
 
         public static void SearchMusicTitle(List<Music> list)
         {
-            Console.WriteLine("Enter keywod for the title");
+            Console.WriteLine("Enter keyword for the title");
             string userMusicTitleSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var music in list)
@@ -102,7 +102,7 @@ namespace LibraryMidtermReFactored
                 Year = userYear,
                 Genre = userMusicGenre,
                 MediaType = "Music",
-                Status = "In",
+                Status = "in",
                 Artist= userMusicArtist,
                 Rating = userMusicRating
             });

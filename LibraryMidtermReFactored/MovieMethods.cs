@@ -63,7 +63,7 @@ namespace LibraryMidtermReFactored
 
         public static void SearchMovieDirector(List<Movie> list)
         {
-            Console.WriteLine("Enter keywod for the director");
+            Console.WriteLine("Enter keyword for the director");
             string userDirectorSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var movie in list)
@@ -102,7 +102,7 @@ namespace LibraryMidtermReFactored
                 Year = userYear,
                 Genre = userMovieGenre,
                 MediaType = "Movie",
-                Status = "In",
+                Status = "in",
                 Director= userMovieDirector,
                 Rating = userMovieRating
             });

@@ -3,6 +3,6 @@ Star Wars: A New Hope|1977|Sci-Fi|Movie|in|George Lucas|Rated PG
 Jaws|1975|Horror|Movie|in|Steven Spielberg|Rated PG
 The Godfather|1972|Crime Drama|Movie|in|Francis Ford Coppola|Rated R
 The Dark Knight|2008|Superhero|Movie|in|Christopher Nolan|Rated PG-13
-2001|1968|Sci-Fi|Movie|In|Stanley Kubrick|PG
-There Will Be Blood|2007|Drama|Movie|In|Paul Thomas Anderson|R
-Boogie Nights|1997|Drama|Movie|In|Paul Thomas Anderson|R
+2001|1968|Sci-Fi|Movie|in|Stanley Kubrick|PG
+There Will Be Blood|2007|Drama|Movie|in|Paul Thomas Anderson|R
+Boogie Nights|1997|Drama|Movie|in|Paul Thomas Anderson|R

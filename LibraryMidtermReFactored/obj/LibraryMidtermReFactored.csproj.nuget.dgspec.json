@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Projects/LibraryMidtermReFactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {}
+    "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {}
   },
   "projects": {
-    "/Users/mac/Projects/LibraryMidtermReFactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {
+    "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Projects/LibraryMidtermReFactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
+        "projectUniqueName": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
         "projectName": "LibraryMidtermReFactored",
-        "projectPath": "/Users/mac/Projects/LibraryMidtermReFactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
+        "projectPath": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
         "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Projects/LibraryMidtermReFactored/LibraryMidtermReFactored/obj/",
+        "outputPath": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

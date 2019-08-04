@@ -61,7 +61,7 @@ namespace LibraryMidtermReFactored
 
         public static void SearchBookAuthor(List<Book> list)
         {
-            Console.WriteLine("Enter keywod for the author");
+            Console.WriteLine("Enter keyword for the author");
             string userAuthorSearch = Console.ReadLine().ToLower();
             Console.WriteLine("Here are the results from the search: \n");
             foreach (var book in list)
@@ -99,7 +99,7 @@ namespace LibraryMidtermReFactored
                 Year = userBookYear,
                 Genre = userBookGenre,
                 MediaType = "Book",
-                Status = "In",
+                Status = "in",
                 Pages = userBookPages,
                 Author = userBookAuthor
             });

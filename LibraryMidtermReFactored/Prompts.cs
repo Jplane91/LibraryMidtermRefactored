@@ -43,7 +43,7 @@ namespace LibraryMidtermReFactored
 
             Console.WriteLine("Which media would you like to add to the database?(book, movie, or music)");
             string mediaToAddResponse = Console.ReadLine().ToLower();
-            if(mediaToAddResponse == "book")
+            if (mediaToAddResponse == "book")
             {
                 BookMethods.AddToBookList(bookInfo);
             }
@@ -78,23 +78,20 @@ namespace LibraryMidtermReFactored
                 if (userSearchPreference == "all" || userMediaPreference == "show all")
                 {
                     BookMethods.PrintBookList(bookInfo);
-                    AskToSearchAgain(); // If they enter no in this method it will ask them to check out
-                                        //If they enter yes to check out, it will then lead them to a different method that asks which media they want to check out
-                                        //Then based off that response, it takes them to a method that has them enter the title they want to check out
-                                        //if their input matches with a title, it will them give the due date, (methodception) I need to add validation if it doesn't match
+                    AskToSearchOrCheckOut();
 
                 }
 
                 else if (userSearchPreference == "title")
                 {
                     BookMethods.SearchBookTitle(bookInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
                 else if (userSearchPreference == "author")
                 {
                     BookMethods.SearchBookAuthor(bookInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
 
                 }
 
@@ -108,19 +105,19 @@ namespace LibraryMidtermReFactored
                 if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MusicMethods.PrintMusicList(musicInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
                 else if (userSearchPreference == "title")
                 {
                     MusicMethods.SearchMusicTitle(musicInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
                 else if (userSearchPreference == "artist")
                 {
                     MusicMethods.SearchMusicArtist(musicInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
             }
@@ -133,61 +130,63 @@ namespace LibraryMidtermReFactored
                 if (userSearchPreference == "all" || userSearchPreference == "show all")
                 {
                     MovieMethods.PrintMovieList(movieInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
                 else if (userSearchPreference == "title" || userMediaPreference == "movie title")
                 {
                     MovieMethods.SearchMovieTitle(movieInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
 
                 else if (userSearchPreference == "director")
                 {
                     MovieMethods.SearchMovieDirector(movieInfo);
-                    AskToSearchAgain();
+                    AskToSearchOrCheckOut();
                 }
             }
         }
 
-        public static void AskToSearchAgain()
+        public static void AskToSearchOrCheckOut()
         {
-            Console.WriteLine("Would you like to search again?(yes or no)");
+            Console.WriteLine("Would you like to search again, go to checkout, or exit?\n(1. Search, 2. Checkout. 3. Exit)");
             string searchAgainResponse = Console.ReadLine().ToLower();
-            if (searchAgainResponse == "yes")
+            if (searchAgainResponse == "1")
             {
                 MovieBookorMusic();
             }
 
-            else if (searchAgainResponse == "no")
+            else if (searchAgainResponse == "2")
             {
-                AskToCheckOut();
+                GoToCheckOut();
+            }
+
+            else if (searchAgainResponse == "3")
+            {
+                Console.WriteLine("Have a good day!");
+                System.Environment.Exit(1);
             }
 
             else
             {
                 Console.WriteLine("Invalid Resonse");
-                AskToSearchAgain();
+                AskToSearchOrCheckOut();
             }
 
 
         }
 
-        public static void AskToCheckOut()
+        public static void GoToCheckOut()
         {
             bool validate;
             List<Movie> movieInfo = MovieMethods.MovieTxtToList();
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
             List<Book> bookInfo = BookMethods.BookTxtToList();
-
-            Console.WriteLine("Would you like to check out a title?(yes or no)");
-            string userCheckOutResponse = Console.ReadLine().ToLower();
-            if (userCheckOutResponse == "yes")
             {
                 string whichMediaType = WhichMediaToCheckOut();
                 if (whichMediaType == "book")
                 {
-                   validate = AskForBookTitleToCheckOut(bookInfo);
+                    validate = AskForBookTitleToCheckOut(bookInfo);
                     if (validate == false)
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
@@ -197,7 +196,7 @@ namespace LibraryMidtermReFactored
                 else if (whichMediaType == "movie")
                 {
                     validate = AskForMovieTitleToCheckOut(movieInfo);
-                    if(validate == false)
+                    if (validate == false)
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
@@ -206,29 +205,16 @@ namespace LibraryMidtermReFactored
                 else
                 {
                     validate = AskForMusicTitleToCheckOut(musicInfo);
-                    if(validate == false)
+                    if (validate == false)
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
                 }
 
             }
-
-            else if (userCheckOutResponse == "no")
-            {
-                //Not sure if we should have them exit here or prompt something else
-                Console.WriteLine("Have a good day!");
-                System.Environment.Exit(1);
-            }
-
-            else
-            {
-                Console.WriteLine("Invalid Response");
-                AskToCheckOut();
-            }
         }
 
-        public static string WhichMediaToCheckOut() //Gets called in the AskToCheckOut Method
+        public static string WhichMediaToCheckOut() //Gets called in the GoToCheckOut Method
         {
             Console.WriteLine("Are you checking out a book, movie, or album?(enter book, movie, or album)");
             string userCheckOutType = Console.ReadLine().ToLower();
@@ -242,7 +228,7 @@ namespace LibraryMidtermReFactored
                 WhichMediaToCheckOut();
             }
             return userCheckOutType;
-  
+
         }
 
         public static bool AskForBookTitleToCheckOut(List<Book> bookList) //returns fall if there is no match
@@ -269,7 +255,7 @@ namespace LibraryMidtermReFactored
                 }
 
             }
-            return false; 
+            return false;
         }
 
         public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
@@ -292,28 +278,27 @@ namespace LibraryMidtermReFactored
                         movie.Status.Replace("in", $"checked out until {answer}");
                         return true;
                     }
-                  
+
                 }
-                
+
             }
 
             return false;
         }
 
         public static bool AskForMusicTitleToCheckOut(List<Music> musicList) //returns false if there is no match
+        {
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(14);
+            String.Format("{0:M/d/yyyy}", answer);
+
+            Console.WriteLine("Which title would you like to check out");
+            string userTitleToCheckOut = Console.ReadLine().ToLower();
+            foreach (var music in musicList)
             {
-
-                DateTime today = DateTime.Now;
-                DateTime answer = today.AddDays(14);
-                String.Format("{0:M/d/yyyy}", answer);
-
-                Console.WriteLine("Which title would you like to check out");
-                string userTitleToCheckOut = Console.ReadLine().ToLower();
-                foreach (var music in musicList)
+                if (userTitleToCheckOut.ToLower() == music.Title.ToLower())
                 {
-                    if (userTitleToCheckOut.ToLower() == music.Title.ToLower())
-                    {
-                        Console.WriteLine("You have checked out " + music.Title);
+                    Console.WriteLine("You have checked out " + music.Title);
                     if (music.Status == "in")
                     {
                         Console.WriteLine($"You have checked this out until {answer}");
@@ -321,40 +306,39 @@ namespace LibraryMidtermReFactored
                         return true;
                     }
 
-                    else
-                    {
-                        return false;
-                    }
- 
-                    }
                 }
-            return false;
             }
+            return false;
+        }
 
-        public static void NotInStockPrompt() 
+        public static void NotInStockPrompt()
         {
             Console.WriteLine("We do not have that in stock");
-            Console.WriteLine("Would you like to enter title again, go back to search, or exit?\n(Type 1 for Enter Again, 2 for Search, 3 to Exit");
-            int userNotInStockResponse = int.Parse(Console.ReadLine());
-            if(userNotInStockResponse == 1)
+            bool loop = true;
+            while (loop)
             {
-                AskToCheckOut();
-            }
+                Console.WriteLine("Would you like to enter title again, go back to search, or exit?\n(Type 1 for Enter Again, 2 for Search, 3 to Exit");
+                int userNotInStockResponse = int.Parse(Console.ReadLine());
+                if (userNotInStockResponse == 1)
+                {
+                    GoToCheckOut();
+                }
 
-            else if (userNotInStockResponse == 2)
-            {
-                MovieBookorMusic();
-            }
+                else if (userNotInStockResponse == 2)
+                {
+                    MovieBookorMusic();
+                }
 
-            else if (userNotInStockResponse == 3)
-            {
-                Console.WriteLine("Have a good day!");
-            }
+                else if (userNotInStockResponse == 3)
+                {
+                    Console.WriteLine("Have a good day!");
+                }
 
-            else
-            {
-                Console.WriteLine("Not a valid response");
-                NotInStockPrompt();
+                else
+                {
+                    Console.WriteLine("Not a valid response");
+                    loop = true;
+                }
             }
         }
     }
