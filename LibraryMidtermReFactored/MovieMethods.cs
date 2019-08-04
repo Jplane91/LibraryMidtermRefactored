@@ -8,7 +8,7 @@ namespace LibraryMidtermReFactored
     public class MovieMethods
     {
 
-        public static List<Movie> MovieTxtToList()
+        public static List<Movie> MovieTxtToList() 
         {
             string filepath = ("../../../MovieTextFile.txt");
 

@@ -3,6 +3,7 @@ namespace LibraryMidtermReFactored
 {
     public class Book : Media
     {
+        //Properties specific to book
         public string Author { get; set; }
         public string Pages { get; set; }
 

@@ -3,6 +3,7 @@ namespace LibraryMidtermReFactored
 {
     public class Movie : Media
     {
+        //properties specific to Movie
         public string Director { get; set; }
         public string Rating { get; set; }
         public string IMDB { get; set; }

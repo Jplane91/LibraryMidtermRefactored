@@ -8,7 +8,7 @@ namespace LibraryMidtermReFactored
 
         public static void Intro()
         {
-            Console.WriteLine("Welcome the Online Library Catalog");
+            Console.WriteLine("Welcome to the Online Library Catalog");
         }
 
         public static void AskToSearchorAdd()
@@ -251,7 +251,7 @@ namespace LibraryMidtermReFactored
                         book.Status.Replace("in", $"checked out until {answer}");
                         return true;
                     }
-
+                    return true;
                 }
 
             }
@@ -278,7 +278,7 @@ namespace LibraryMidtermReFactored
                         movie.Status.Replace("in", $"checked out until {answer}");
                         return true;
                     }
-
+                    return true;
                 }
 
             }
@@ -305,7 +305,7 @@ namespace LibraryMidtermReFactored
                         music.Status.Replace("in", $"checked out until {answer}");
                         return true;
                     }
-
+                    return true;
                 }
             }
             return false;

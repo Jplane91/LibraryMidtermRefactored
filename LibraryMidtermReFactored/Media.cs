@@ -6,8 +6,9 @@ using System.Linq;
 
 namespace LibraryMidtermReFactored
 {
-     public abstract class Media
+     public abstract class Media //Superclass
     {
+        //base properties for all classes
         public string Title { get; set; }
         public string Genre { get; set; }
         public string Year { get; set; }

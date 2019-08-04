@@ -3,6 +3,7 @@ namespace LibraryMidtermReFactored
 {
     public class Music : Media
     {
+        //Properties specific to Music
         public string Artist { get; set; }
         public string Rating { get; set; }
 
