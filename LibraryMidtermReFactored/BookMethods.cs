@@ -54,6 +54,7 @@ namespace LibraryMidtermReFactored
                 {
                      Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year);
                 }
+                
             }
                 
         }

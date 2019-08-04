@@ -175,6 +175,7 @@ namespace LibraryMidtermReFactored
 
         public static void AskToCheckOut()
         {
+            bool validate;
             List<Movie> movieInfo = MovieMethods.MovieTxtToList();
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
             List<Book> bookInfo = BookMethods.BookTxtToList();
@@ -186,18 +187,29 @@ namespace LibraryMidtermReFactored
                 string whichMediaType = WhichMediaToCheckOut();
                 if (whichMediaType == "book")
                 {
-                    AskForBookTitleToCheckOut(bookInfo);
+                   validate = AskForBookTitleToCheckOut(bookInfo);
+                    if (validate == false)
+                    {
+                        NotInStockPrompt(); //prompts to check out again, search again, or to exit
+                    }
                 }
 
                 else if (whichMediaType == "movie")
                 {
-
-                    AskForMovieTitleToCheckOut(movieInfo);
+                    validate = AskForMovieTitleToCheckOut(movieInfo);
+                    if(validate == false)
+                    {
+                        NotInStockPrompt(); //prompts to check out again, search again, or to exit
+                    }
                 }
 
                 else
                 {
-                    AskForMusicTitleToCheckOut(musicInfo);
+                    validate = AskForMusicTitleToCheckOut(musicInfo);
+                    if(validate == false)
+                    {
+                        NotInStockPrompt(); //prompts to check out again, search again, or to exit
+                    }
                 }
 
             }
@@ -233,7 +245,7 @@ namespace LibraryMidtermReFactored
   
         }
 
-        public static void AskForBookTitleToCheckOut(List<Book> bookList)
+        public static bool AskForBookTitleToCheckOut(List<Book> bookList) //returns fall if there is no match
         {
 
             DateTime today = DateTime.Now;
@@ -244,22 +256,23 @@ namespace LibraryMidtermReFactored
             string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var book in bookList)
             {
-                if (userTitleToCheckOut == book.Title.ToLower())
+                if (userTitleToCheckOut.ToLower() == book.Title.ToLower())
                 {
                     Console.WriteLine("You have checked out " + book.Title);
                     if (book.Status == "in")
                     {
                         Console.WriteLine($"You have checked this out until {answer}");
                         book.Status.Replace("in", $"checked out until {answer}");
-                        break;
+                        return true;
                     }
 
                 }
 
             }
+            return false; 
         }
 
-        public static void AskForMovieTitleToCheckOut(List<Movie> movieList)
+        public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
         {
 
             DateTime today = DateTime.Now;
@@ -270,22 +283,24 @@ namespace LibraryMidtermReFactored
             string userTitleToCheckOut = Console.ReadLine();
             foreach (var movie in movieList)
             {
-                if (userTitleToCheckOut == movie.Title.ToLower())
+                if (userTitleToCheckOut.ToLower() == movie.Title.ToLower())
                 {
                     Console.WriteLine("You have checked out " + movie.Title);
                     if (movie.Status == "in")
                     {
                         Console.WriteLine($"You have checked this out until {answer}");
                         movie.Status.Replace("in", $"checked out until {answer}");
-                        break;
+                        return true;
                     }
-
+                  
                 }
-
+                
             }
+
+            return false;
         }
 
-        public static void AskForMusicTitleToCheckOut(List<Music> musicList)
+        public static bool AskForMusicTitleToCheckOut(List<Music> musicList) //returns false if there is no match
             {
 
                 DateTime today = DateTime.Now;
@@ -296,19 +311,51 @@ namespace LibraryMidtermReFactored
                 string userTitleToCheckOut = Console.ReadLine().ToLower();
                 foreach (var music in musicList)
                 {
-                    if (userTitleToCheckOut == music.Title.ToLower())
+                    if (userTitleToCheckOut.ToLower() == music.Title.ToLower())
                     {
                         Console.WriteLine("You have checked out " + music.Title);
-                        if (music.Status == "in")
-                        {
-                            Console.WriteLine($"You have checked this out until {answer}");
-                            music.Status.Replace("in", $"checked out until {answer}");
-                            break;
-                        }
-
+                    if (music.Status == "in")
+                    {
+                        Console.WriteLine($"You have checked this out until {answer}");
+                        music.Status.Replace("in", $"checked out until {answer}");
+                        return true;
                     }
 
+                    else
+                    {
+                        return false;
+                    }
+ 
+                    }
                 }
+            return false;
             }
+
+        public static void NotInStockPrompt() 
+        {
+            Console.WriteLine("We do not have that in stock");
+            Console.WriteLine("Would you like to enter title again, go back to search, or exit?\n(Type 1 for Enter Again, 2 for Search, 3 to Exit");
+            int userNotInStockResponse = int.Parse(Console.ReadLine());
+            if(userNotInStockResponse == 1)
+            {
+                AskToCheckOut();
+            }
+
+            else if (userNotInStockResponse == 2)
+            {
+                MovieBookorMusic();
+            }
+
+            else if (userNotInStockResponse == 3)
+            {
+                Console.WriteLine("Have a good day!");
+            }
+
+            else
+            {
+                Console.WriteLine("Not a valid response");
+                NotInStockPrompt();
+            }
+        }
     }
 }
