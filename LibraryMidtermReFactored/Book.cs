@@ -12,8 +12,8 @@ namespace LibraryMidtermReFactored
 
         }
 
-        public Book(string title, string year, string genre, string mediaType, string author, string pages, string status)
-            : base(title, year, genre, mediaType, status)
+        public Book(string title, string year, string genre, string mediaType, string author, string pages, string status, string format)
+            : base(title, year, genre, mediaType, status, format)
         {
 
         }

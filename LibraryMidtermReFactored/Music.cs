@@ -12,8 +12,8 @@ namespace LibraryMidtermReFactored
 
         }
 
-        public Music(string title, string year, string genre, string mediaType, string artist, string rating, string status)
-            : base(title, year, genre, mediaType, status)
+        public Music(string title, string year, string genre, string mediaType, string artist, string rating, string status, string format)
+            : base(title, year, genre, mediaType, status, format)
         {
 
         }

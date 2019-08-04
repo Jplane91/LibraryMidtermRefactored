@@ -1,11 +1,11 @@
-Moby Dick|1851|Fiction|Classic Lit|in|585|Herman Melville
-The Adventures of Huckleberry Finn|1884|Classic Lit|Book|in|366|Mark Twain
-Alice's Adventure in Wonderland|1862|Classic Lit|Book|in|200|Lewis Carrol
-A Brief History of Time|1988|Non-Fiction|Book|in|256|Stephen Hawking
-Sapiens: A Brief History of Humankind|2011|Non-Fiction|Book|in|443|Yuval Noah Harari
-East of Eden|1962|Fiction|Book|in|1962|John Steinbeck
-Sirens of Titan|1959|Science Fiction|Book|in|340|Kurt Vonnegut
-The Great Gatsby|1925|Classic Lit|Book|in|180|F Scott Fitzgerald
-Harry Potter and the Sorcerer's Stone|1997|Young Adult|Book|in|336|JK Rowling
-The Brother's Karamazov|1880|Classic Lit|Book|in|824|Fyodor Dostoevsky
-Blood Meridian|1985|Western|Book|in|337|Cormac McCarthy
+Moby Dick|1851|Fiction|Classic Lit|in|585|Herman Melville|Paperback
+The Adventures of Huckleberry Finn|1884|Classic Lit|Book|in|366|Mark Twain|Hardcover
+Alice's Adventure in Wonderland|1862|Classic Lit|Book|in|200|Lewis Carrol|Paperback
+A Brief History of Time|1988|Non-Fiction|Book|in|256|Stephen Hawking|Hardbook
+Sapiens: A Brief History of Humankind|2011|Non-Fiction|Book|in|443|Yuval Noah Harari|Hardcover
+East of Eden|1962|Fiction|Book|in|1962|John Steinbeck|Paperback
+Sirens of Titan|1959|Science Fiction|Book|in|340|Kurt Vonnegut|Paperback
+The Great Gatsby|1925|Classic Lit|Book|in|180|F Scott Fitzgerald|Audiobook
+Harry Potter and the Sorcerer's Stone|1997|Young Adult|Book|in|336|JK Rowling|Paperback
+The Brother's Karamazov|1880|Classic Lit|Book|in|824|Fyodor Dostoevsky|Paperback
+Blood Meridian|1985|Western|Book|in|337|Cormac McCarthy|Paperback

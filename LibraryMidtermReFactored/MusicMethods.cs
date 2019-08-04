@@ -26,6 +26,7 @@ namespace LibraryMidtermReFactored
                 newMusic.Status = entries[4];
                 newMusic.Artist = entries[5];
                 newMusic.Rating = entries[6];
+                newMusic.Format = entries[7];
 
                 musicInfo.Add(newMusic);
             }
@@ -41,7 +42,8 @@ namespace LibraryMidtermReFactored
             foreach(var music in list)
             {
                 Console.WriteLine();
-                Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating + "\nYear Released: " + music.Year + "\nStatus: " + music.Status);
+                Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating
+                    + "\nYear Released: " + music.Year + "\nFormat: " + music.Format + "\nStatus: " + music.Status);
             }
         }
 
@@ -55,7 +57,8 @@ namespace LibraryMidtermReFactored
                 if(music.Title.ToLower().Contains(userMusicTitleSearch))
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating + "\nYear Released: " + music.Year + "\nStatus: " + music.Status);
+                    Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating
+                        + "\nYear Released: " + music.Year + "\nFormat: " + music.Format + "\nStatus: " + music.Status);
                 }
             }
                 
@@ -71,7 +74,8 @@ namespace LibraryMidtermReFactored
                 if (music.Artist.ToLower().Contains(userArtistSearch))
                 {
                     Console.WriteLine();
-                    Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating + "\nYear Released: " + music.Year + "\nStatus: " + music.Status);
+                    Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating
+                        + "\nYear Released: " + music.Year + "\nFormat: " + music.Format + "\nStatus: " + music.Status);
                 }
             }
         }
@@ -95,6 +99,9 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Enter Genre");
             string userMusicGenre = Console.ReadLine();
 
+            Console.WriteLine("Enter Format");
+            string userMusicFormat = Console.ReadLine();
+
 
             list.Add(new Music
             {
@@ -104,13 +111,14 @@ namespace LibraryMidtermReFactored
                 MediaType = "Music",
                 Status = "in",
                 Artist= userMusicArtist,
-                Rating = userMusicRating
+                Rating = userMusicRating,
+                Format = userMusicFormat
             });
 
             List<string> output = new List<string>();
             foreach (var music in list)
             {
-                output.Add($"{ music.Title}|{music.Year}|{music.Genre}|{music.MediaType}|{music.Status}|{music.Artist}|{music.Rating}");
+                output.Add($"{ music.Title}|{music.Year}|{music.Genre}|{music.MediaType}|{music.Status}|{music.Artist}|{music.Rating}|{music.Format}");
             }
 
             File.WriteAllLines(filepath, output);

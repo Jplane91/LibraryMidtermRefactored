@@ -26,6 +26,7 @@ namespace LibraryMidtermReFactored
                 newBook.Status = entries[4];
                 newBook.Pages = entries[5];
                 newBook.Author = entries[6];
+                newBook.Format = entries[7];
 
                 bookInfo.Add(newBook);
             }
@@ -39,8 +40,8 @@ namespace LibraryMidtermReFactored
         {
             foreach(var book in list)
             {
-                Console.WriteLine();
-                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year + "\nStatus: " + book.Status);
+                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages
+                    + "\nYear Published: " + book.Year + "\nFormat: " + book.Format + "\nStatus: " + book.Status);
             }
         }
         public static void SearchBookTitle(List<Book> list)
@@ -52,7 +53,8 @@ namespace LibraryMidtermReFactored
             {
                 if(book.Title.ToLower().Contains(userBookTitleSearch))
                 {
-                     Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages + "\nYear Published: " + book.Year + "\nStatus: " + book.Status);
+                     Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages
+                         + "\nYear Published: " + book.Year + "\nFormat: " + book.Format + "\nStatus: " + book.Status);
                 }
                 
             }
@@ -68,7 +70,8 @@ namespace LibraryMidtermReFactored
             {
                 if (book.Author.ToLower().Contains(userAuthorSearch))
                 {
-                    Console.WriteLine("Author: " + book.Author + "\nTitle: " + book.Title +  "\nPages: " + book.Pages + "\nYear Published: " + book.Year +"\nStatus: " + book.Status);
+                    Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages
+                     + "\nYear Published: " + book.Year + "\nFormat: " + book.Format + "\nStatus: " + book.Status);
                 }
             }
         }
@@ -92,6 +95,9 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Enter Genre");
             string userBookGenre = Console.ReadLine();
 
+            Console.WriteLine("Enter Format(Paperback, Hardcover, Audiobook)");
+            string userBookFormat = Console.ReadLine();
+
 
             list.Add(new Book
             {
@@ -101,13 +107,14 @@ namespace LibraryMidtermReFactored
                 MediaType = "Book",
                 Status = "in",
                 Pages = userBookPages,
-                Author = userBookAuthor
+                Author = userBookAuthor,
+                Format = userBookFormat
             });
 
             List<string> output = new List<string>();
             foreach (var book in list)
             {
-                output.Add($"{ book.Title}|{book.Year}|{book.Genre}|{book.MediaType}|{book.Status}|{book.Pages}|{book.Author}");
+                output.Add($"{ book.Title}|{book.Year}|{book.Genre}|{book.MediaType}|{book.Status}|{book.Pages}|{book.Author}|{book.Format}");
             }
 
             File.WriteAllLines(filepath, output);

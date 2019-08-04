@@ -13,8 +13,8 @@ namespace LibraryMidtermReFactored
 
         }
 
-        public Movie(string title, string year, string genre, string mediaType, string director, string rating, string status, int imdb)
-            : base(title, year, genre, mediaType, status)
+        public Movie(string title, string year, string genre, string mediaType, string director, string rating, string status, int imdb, string format)
+            : base(title, year, genre, mediaType, status, format)
         {
 
         }
