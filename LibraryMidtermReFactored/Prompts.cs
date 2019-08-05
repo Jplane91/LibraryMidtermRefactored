@@ -348,11 +348,21 @@ namespace LibraryMidtermReFactored
                             string originalLineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
                             book.Status = $"checked out until {answer}";
                             string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
-                            WriteToBookTextFile(bookList, lineOfInfo, originalLineOfInfo);
+                            WriteToBookTextFileCheckOut(bookList, lineOfInfo, originalLineOfInfo);
                         }
                         else
                         {
                             Console.WriteLine("This book is aleady checked out");
+                            Console.WriteLine("Would you like to check it in?");
+                            string ans1 = Console.ReadLine();
+                            string originalLineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
+                            book.Status = "in";
+                            string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
+                            if (ans1 == "y")
+                            {
+                                WriteToBookFileCheckIn(bookList, lineOfInfo, originalLineOfInfo);
+
+                            }
                         }
                     }
 
@@ -362,7 +372,29 @@ namespace LibraryMidtermReFactored
             }
             return ans;
         }
-        public static void WriteToBookTextFile(List<Book> bookList, string line1, string line2) 
+        public static void WriteToBookFileCheckIn(List<Book> bookList, string line1, string line2)
+        {
+            var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            int count = 0;
+            foreach (string i in newLines)
+            {
+                newNewLines[count] = i;
+                count++;
+            }
+            int count1 = 0;
+            foreach (string j in newNewLines)
+            {
+                count1++;
+                if (j == line2)
+                {
+                    newNewLines[count1 - 1] = line1;
+                }
+            }
+            File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
+        }
+        public static void WriteToBookTextFileCheckOut(List<Book> bookList, string line1, string line2) 
         {
             //take in the wanted line as a string array, make it a single string, rewrite the entire text file
             var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
