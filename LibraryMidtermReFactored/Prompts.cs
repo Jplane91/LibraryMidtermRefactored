@@ -1,7 +1,8 @@
 
 ﻿using System;
 using System.Collections.Generic;
-
+using System.IO;
+using System.Linq;
 namespace LibraryMidtermReFactored
 {
     public class Prompts
@@ -327,11 +328,10 @@ namespace LibraryMidtermReFactored
         }
         public static bool AskForBookTitleToCheckOut(List<Book> bookList) //returns fall if there is no match
         {
-
             DateTime today = DateTime.Now;
             DateTime answer = today.AddDays(14);
             String.Format("{0:M/d/yyyy}", answer);
-
+            bool ans = true;
             Console.WriteLine("Which title would you like to check out");
             string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var book in bookList)
@@ -342,21 +342,30 @@ namespace LibraryMidtermReFactored
                     string userResponse = Console.ReadLine().ToLower();
                     if (userResponse == "y")
                     {
-                        Console.WriteLine("You have checked out " + book.Title);
                         if (book.Status == "in")
                         {
-                            Console.WriteLine($"You have checked this out until {answer}");
+                            Console.WriteLine($"You have checked out {book.Title} until {answer}");
                             book.Status.Replace("in", $"checked out until {answer}");
-                            return true;
+                            //write to file
                         }
-                        return true;
+                        else
+                        {
+                            Console.WriteLine("This book is aleady checked out");
+                        }
                     }
-                   
-                                                     
-                }              
+
+
+                }
 
             }
-            return false;
+            return ans;
+        }
+        public static void WriteToBookTextFile(List<Book> bookList, string line1)
+        {
+            //take in the wanted line as a string array, make it a single string, rewrite the entire text file
+            var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);
+            File.WriteAllLines("../../../BookTextFile.txt", newLines);
         }
 
         public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
