@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 
@@ -11,24 +12,29 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Welcome to the Online Library Catalog");
         }
 
-        public static void AskToSearchorAdd()
+        public static void AskToSearchReturnOrAdd()
         {
 
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Check an item out.");
-            Console.WriteLine("2. Donate to the Library.");
-            Console.WriteLine("3. Quit.");
+            Console.WriteLine("2. Return an item.");
+            Console.WriteLine("3. Donate to the Library.");
+            Console.WriteLine("4. Quit.");
             string searchOrAddResonse = Console.ReadLine().ToLower();
             if (searchOrAddResonse == "1")
             {
                 MovieBookorMusic();
             }
-
+         
             else if (searchOrAddResonse == "2")
+            {
+
+            }
+            else if (searchOrAddResonse == "3")
             {
                 AskWhichMediaToAdd();
             }
-            else if(searchOrAddResonse == "3")
+            else if(searchOrAddResonse == "4")
                 {
                Console.WriteLine("Have a nice day!");
                return;
@@ -37,7 +43,7 @@ namespace LibraryMidtermReFactored
             else
             {
                 Console.WriteLine("Invalid response");
-                AskToSearchorAdd();
+                AskToSearchReturnOrAdd();
             }
 
 
@@ -234,6 +240,11 @@ namespace LibraryMidtermReFactored
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
+                    }
                 }
 
                 else if (whichMediaType == "movie")
@@ -243,6 +254,11 @@ namespace LibraryMidtermReFactored
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
+                    }
                 }
 
                 else
@@ -251,6 +267,11 @@ namespace LibraryMidtermReFactored
                     if (validate == false)
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
+                    }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
                     }
                 }
 
@@ -382,6 +403,28 @@ namespace LibraryMidtermReFactored
                     Console.WriteLine("Not a valid response");
                     loop = true;
                 }
+            }
+        }
+        public static void ReturnToMainMenuOrExit()
+        {
+            Console.WriteLine("Would you like to return to the main menu or to exit?");
+            string userMainMenuOrExitResponse = Console.ReadLine().ToLower();
+            if (userMainMenuOrExitResponse == "main menu" || userMainMenuOrExitResponse == "main" || userMainMenuOrExitResponse == "menu")
+            {
+                Console.Clear();
+                AskToSearchReturnOrAdd();
+            }
+
+            else if (userMainMenuOrExitResponse == "exit")
+            {
+                Console.WriteLine("Have a good day!");
+                System.Environment.Exit(1);
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid input");
+                ReturnToMainMenuOrExit();
             }
         }
     }

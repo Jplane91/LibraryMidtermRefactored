@@ -11,3 +11,4 @@ Drive|2011|Thriller|Movie|in|Nicolas Winding Refn|R|7.8|4K
 The Big Lebowski|1998|Comedy|Movie|in|Joel Coen|R|8.1|DVD
 Lord of the Rings: Fellowship of the Ring|2001|Fantasy|Movie|in|Peter Jackson|PG-13|8.8|DVD
 Arrival|2016|Sci-Fi|Movie|in|Denis Villeneuve|PG-13|7.9|DVD
+Eternal Sunshine of the Spotless Mind|2004|Romance|Movie|in|Michel Gondry|R|8.3|Blu-Ray

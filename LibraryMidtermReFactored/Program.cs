@@ -9,7 +9,11 @@ namespace LibraryMidtermReFactored
         static void Main(string[] args)
         {
             Prompts.Intro();
-            Prompts.AskToSearchorAdd();
+
+            Prompts.AskToSearchReturnOrAdd();
+
+            
+
         }
     }
 }
