@@ -367,13 +367,17 @@ namespace LibraryMidtermReFactored
             var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
             var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
             var newNewLines = new string[oldLines.Length];
+            int count = 0;
             foreach(string i in newLines)
             {
-                int count = 0;
                 count++;
                 newNewLines[count] = i;
             }
-            newNewLines[oldLines.Length] = line1;
+            newNewLines[oldLines.Length-1] = line1;
+            foreach(string j in  newNewLines)
+            {
+                Console.WriteLine(j);
+            }
             File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
 
