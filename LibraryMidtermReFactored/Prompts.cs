@@ -548,7 +548,7 @@ namespace LibraryMidtermReFactored
             string userMainMenuOrExitResponse = Console.ReadLine().ToLower();
             if (userMainMenuOrExitResponse == "main menu" || userMainMenuOrExitResponse == "main" || userMainMenuOrExitResponse == "menu")
             {
-                Console.Clear();
+                //Console.Clear();
                 AskToSearchReturnOrAdd();
             }
 
