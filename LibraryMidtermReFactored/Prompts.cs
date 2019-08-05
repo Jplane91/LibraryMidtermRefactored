@@ -92,14 +92,14 @@ namespace LibraryMidtermReFactored
 
         public static void MovieBookorMusic()
         {
-            Console.WriteLine("What would you like to search for?\n1.Book\n2.Movie\n3.Music\n4.Quit");
+            Console.WriteLine("What would you like to search for?\n1. Book\n2. Movie\n3. Music\n4. Quit");
             string userMediaPreference = Console.ReadLine().ToLower();
 
             if (userMediaPreference == "1")
             {
                 List<Book> bookInfo = BookMethods.BookTxtToList();
                 Console.WriteLine("We have a lot of books.");
-                Console.WriteLine("1. Search by title.\n2. Search by author\n3.Full List\n4.Quit");
+                Console.WriteLine("1. Search by title.\n2. Search by author\n3. Full List\n4. Quit");
                 string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "1")
                 {
@@ -121,7 +121,7 @@ namespace LibraryMidtermReFactored
                 else if(userSearchPreference == "4")
                 {
                     Console.WriteLine("Have a nice day!");
-                    return;
+                    Environment.Exit(0);
                 }
                 else
                 {
@@ -133,7 +133,7 @@ namespace LibraryMidtermReFactored
             else if (userMediaPreference == "2")
             {
                 List<Movie> movieInfo = MovieMethods.MovieTxtToList();
-                Console.WriteLine("We have a lot of movies.\n1.Search by title.\n2.Search by director.\n3.Full List\n4.Quit.");
+                Console.WriteLine("We have a lot of movies.\n1. Search by title.\n2. Search by director.\n3. Full List\n4. Quit.");
                 string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "1")
                 {
@@ -155,7 +155,7 @@ namespace LibraryMidtermReFactored
                 else if (userSearchPreference == "4")
                 {
                     Console.WriteLine("Have a nice day!");
-                    return;
+                    Environment.Exit(0);
                 }
                 else
                 {
@@ -166,7 +166,7 @@ namespace LibraryMidtermReFactored
             else if (userMediaPreference == "3")
             {
                 List<Music> musicInfo = MusicMethods.MusicTxtToList();
-                Console.WriteLine("We have a lot of music albums!\n1.Search by Title.\n2.Search by Artist.\n3.Full List.\n4.Quit.");
+                Console.WriteLine("We have a lot of music albums!\n1. Search by Title.\n2. Search by Artist.\n3. Full List.\n4. Quit.");
                 string userSearchPreference = Console.ReadLine().ToLower();
                 if (userSearchPreference == "1")
                 {
@@ -188,7 +188,7 @@ namespace LibraryMidtermReFactored
                 else if(userSearchPreference == "4")
                 {
                     Console.WriteLine("Have a nice day!");
-                    return;
+                    Environment.Exit(0);
                 }
                 else
                 {
@@ -283,7 +283,7 @@ namespace LibraryMidtermReFactored
 
         public static string WhichMediaToCheckOut() //Gets called in the GoToCheckOut Method
         {
-            Console.WriteLine("Great! and what are you checking out today?\n1.Book\n2.Movie\n3.Music Album");
+            Console.WriteLine("Great! What are you checking out today?\n1. Book\n2. Movie\n3. Music Album");
             string userCheckOutType = Console.ReadLine().ToLower();
             if (userCheckOutType == "1" || userCheckOutType == "2" || userCheckOutType == "3")
             {
@@ -317,6 +317,7 @@ namespace LibraryMidtermReFactored
             {
                 CheckInMusic(musicInfo);
             }
+            else
             {
                 Console.WriteLine("Invalid Response");
                 WhichMediaToCheckIn();
@@ -402,17 +403,21 @@ namespace LibraryMidtermReFactored
             foreach (var music in musicList)
             {
                 if (music.Title.ToLower().Contains(userTitleToCheckOut))
-                {
+                {                  
                     Console.WriteLine($"Would you like to check out {music.Title}? Y/N");
                     string userInput = Console.ReadLine();
                     if (userInput == "y")
                     {
-                        Console.WriteLine("You have checked out " + music.Title);
                         if (music.Status == "in")
                         {
+                            Console.WriteLine("You have checked out " + music.Title);
                             Console.WriteLine($"You have checked this out until {answer}");
-                            music.Status.Replace("in", $"checked out until {answer}");
+                            music.Status.Replace("in","out");
                             return true;
+                        }
+                        else if(music.Status == "out")
+                        {
+                            NotInStockPrompt();
                         }
                         return true;
                     }
