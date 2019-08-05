@@ -42,8 +42,8 @@ namespace LibraryMidtermReFactored
             foreach(var music in list)
             {
                 Console.WriteLine();
-                Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist + "\nRating: " + music.Rating
-                    + "\nYear Released: " + music.Year + "\nFormat: " + music.Format + "\nStatus: " + music.Status);
+                Console.WriteLine("Title: " + music.Title + "\nArtist: " + music.Artist);
+             
             }
         }
 

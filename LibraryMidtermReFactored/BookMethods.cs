@@ -40,8 +40,8 @@ namespace LibraryMidtermReFactored
         {
             foreach(var book in list)
             {
-                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author + "\nPages: " + book.Pages
-                    + "\nYear Published: " + book.Year + "\nFormat: " + book.Format + "\nStatus: " + book.Status);
+                Console.WriteLine();
+                Console.WriteLine("Title: " + book.Title + "\nAuthor: " + book.Author);
             }
         }
         public static void SearchBookTitle(List<Book> list)

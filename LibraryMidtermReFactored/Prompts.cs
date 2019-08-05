@@ -17,24 +17,29 @@ namespace LibraryMidtermReFactored
 
             Console.WriteLine("What would you like to do?");
             Console.WriteLine("1. Check an item out.");
-            Console.WriteLine("2. Return an item.");
-            Console.WriteLine("3. Donate to the Library.");
-            Console.WriteLine("4. Quit.");
+            Console.WriteLine("2. Search inventory");
+            Console.WriteLine("3. Return an item.");
+            Console.WriteLine("4. Donate to the Library.");
+            Console.WriteLine("5. Quit.");
             string searchOrAddResonse = Console.ReadLine().ToLower();
             if (searchOrAddResonse == "1")
             {
-                MovieBookorMusic();
+                GoToCheckOut();
             }
          
             else if (searchOrAddResonse == "2")
             {
-
+                MovieBookorMusic();
             }
             else if (searchOrAddResonse == "3")
             {
-                AskWhichMediaToAdd();
+           
             }
             else if(searchOrAddResonse == "4")
+            {
+                AskWhichMediaToAdd();
+            }
+            else if(searchOrAddResonse == "5")
                 {
                Console.WriteLine("Have a nice day!");
                return;
@@ -55,19 +60,19 @@ namespace LibraryMidtermReFactored
             List<Movie> movieInfo = MovieMethods.MovieTxtToList();
             List<Music> musicInfo = MusicMethods.MusicTxtToList();
 
-            Console.WriteLine("Which media would you like to add to the database?(book, movie, or music)");
+            Console.WriteLine("Which media would you like to add to the database?\n1.Book\n2.Movie\n3.Music");
             string mediaToAddResponse = Console.ReadLine().ToLower();
-            if (mediaToAddResponse == "book")
+            if (mediaToAddResponse == "1")
             {
                 BookMethods.AddToBookList(bookInfo);
             }
 
-            else if (mediaToAddResponse == "movie")
+            else if (mediaToAddResponse == "2")
             {
                 MovieMethods.AddToMovieList(movieInfo);
             }
 
-            else if (mediaToAddResponse == "music")
+            else if (mediaToAddResponse == "3")
             {
                 MusicMethods.AddToMusicList(musicInfo);
             }
@@ -81,7 +86,7 @@ namespace LibraryMidtermReFactored
 
         public static void MovieBookorMusic()
         {
-            Console.WriteLine("What would you like to checkout?\n1.Book\n2.Movie\n3.Music\n4.Quit");
+            Console.WriteLine("What would you like to search for?\n1.Book\n2.Movie\n3.Music\n4.Quit");
             string userMediaPreference = Console.ReadLine().ToLower();
 
             if (userMediaPreference == "1")
@@ -198,24 +203,16 @@ namespace LibraryMidtermReFactored
 
         public static void AskToSearchOrCheckOut()
         {
-            Console.WriteLine("Would you like to search again, go to checkout, or exit?\n(1. Search, 2. Checkout. 3. Exit)");
+            Console.WriteLine("Did you find what you're looking for? Y/N");
             string searchAgainResponse = Console.ReadLine().ToLower();
-            if (searchAgainResponse == "1")
-            {
-                MovieBookorMusic();
-            }
-
-            else if (searchAgainResponse == "2")
+            if (searchAgainResponse == "y" || searchAgainResponse == "yes")
             {
                 GoToCheckOut();
             }
-
-            else if (searchAgainResponse == "3")
+            else if (searchAgainResponse == "n" || searchAgainResponse == "no")
             {
-                Console.WriteLine("Have a good day!");
-                System.Environment.Exit(1);
-            }
-
+                MovieBookorMusic();
+            }         
             else
             {
                 Console.WriteLine("Invalid Response");
@@ -233,7 +230,7 @@ namespace LibraryMidtermReFactored
             List<Book> bookInfo = BookMethods.BookTxtToList();
             {
                 string whichMediaType = WhichMediaToCheckOut();
-                if (whichMediaType == "book")
+                if (whichMediaType == "1")
                 {
                     validate = AskForBookTitleToCheckOut(bookInfo);
                     if (validate == false)
@@ -247,7 +244,7 @@ namespace LibraryMidtermReFactored
                     }
                 }
 
-                else if (whichMediaType == "movie")
+                else if (whichMediaType == "2")
                 {
                     validate = AskForMovieTitleToCheckOut(movieInfo);
                     if (validate == false)
@@ -280,9 +277,9 @@ namespace LibraryMidtermReFactored
 
         public static string WhichMediaToCheckOut() //Gets called in the GoToCheckOut Method
         {
-            Console.WriteLine("Are you checking out a book, movie, or album?(enter book, movie, or album)");
+            Console.WriteLine("Great! and what are you checking out today?\n1.Book\n2.Movie\n3.Music Album");
             string userCheckOutType = Console.ReadLine().ToLower();
-            if (userCheckOutType == "book" || userCheckOutType == "movie" || userCheckOutType == "album")
+            if (userCheckOutType == "1" || userCheckOutType == "2" || userCheckOutType == "3")
             {
                 return userCheckOutType;
             }
@@ -306,17 +303,24 @@ namespace LibraryMidtermReFactored
             string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var book in bookList)
             {
-                if (userTitleToCheckOut.ToLower() == book.Title.ToLower())
+                if (book.Title.ToLower().Contains(userTitleToCheckOut))
                 {
-                    Console.WriteLine("You have checked out " + book.Title);
-                    if (book.Status == "in")
+                    Console.WriteLine($"Would you like to check out {book.Title} by {book.Author}? \nY/N");
+                    string userResponse = Console.ReadLine().ToLower();
+                    if (userResponse == "y")
                     {
-                        Console.WriteLine($"You have checked this out until {answer}");
-                        book.Status.Replace("in", $"checked out until {answer}");
+                        Console.WriteLine("You have checked out " + book.Title);
+                        if (book.Status == "in")
+                        {
+                            Console.WriteLine($"You have checked this out until {answer}");
+                            book.Status.Replace("in", $"checked out until {answer}");
+                            return true;
+                        }
                         return true;
                     }
-                    return true;
-                }
+                   
+                                                     
+                }              
 
             }
             return false;
@@ -329,20 +333,25 @@ namespace LibraryMidtermReFactored
             DateTime answer = today.AddDays(14);
             String.Format("{0:M/d/yyyy}", answer);
 
-            Console.WriteLine("Which title would you like to check out");
+            Console.WriteLine("Which Movie would you like to check out");
             string userTitleToCheckOut = Console.ReadLine();
             foreach (var movie in movieList)
             {
-                if (userTitleToCheckOut.ToLower() == movie.Title.ToLower())
+                if (movie.Title.ToLower().Contains(userTitleToCheckOut))
                 {
-                    Console.WriteLine("You have checked out " + movie.Title);
-                    if (movie.Status == "in")
+                    Console.WriteLine($"Would you like to check out {movie.Title}? Y/N");
+                    string userInput = Console.ReadLine().ToLower();
+                    if (userInput == "y")
                     {
-                        Console.WriteLine($"You have checked this out until {answer}");
-                        movie.Status.Replace("in", $"checked out until {answer}");
+                        Console.WriteLine("You have checked out " + movie.Title);
+                        if (movie.Status == "in")
+                        {
+                            Console.WriteLine($"You have checked this out until {answer}");
+                            movie.Status.Replace("in", $"checked out until {answer}");
+                            return true;
+                        }
                         return true;
                     }
-                    return true;
                 }
 
             }
@@ -360,16 +369,21 @@ namespace LibraryMidtermReFactored
             string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var music in musicList)
             {
-                if (userTitleToCheckOut.ToLower() == music.Title.ToLower())
+                if (music.Title.ToLower().Contains(userTitleToCheckOut))
                 {
-                    Console.WriteLine("You have checked out " + music.Title);
-                    if (music.Status == "in")
+                    Console.WriteLine($"Would you like to check out {music.Title}? Y/N");
+                    string userInput = Console.ReadLine();
+                    if (userInput == "y")
                     {
-                        Console.WriteLine($"You have checked this out until {answer}");
-                        music.Status.Replace("in", $"checked out until {answer}");
+                        Console.WriteLine("You have checked out " + music.Title);
+                        if (music.Status == "in")
+                        {
+                            Console.WriteLine($"You have checked this out until {answer}");
+                            music.Status.Replace("in", $"checked out until {answer}");
+                            return true;
+                        }
                         return true;
                     }
-                    return true;
                 }
             }
             return false;
@@ -381,7 +395,7 @@ namespace LibraryMidtermReFactored
             bool loop = true;
             while (loop)
             {
-                Console.WriteLine("Would you like to enter title again, go back to search, or exit?\n(Type 1 for Enter Again, 2 for Search, 3 to Exit");
+                Console.WriteLine("Would you like to retry another title, go back to search, or exit?\n1.Retry\n2.Search\n3.Exit");
                 int userNotInStockResponse = int.Parse(Console.ReadLine());
                 if (userNotInStockResponse == 1)
                 {
@@ -396,6 +410,7 @@ namespace LibraryMidtermReFactored
                 else if (userNotInStockResponse == 3)
                 {
                     Console.WriteLine("Have a good day!");
+                    return;
                 }
 
                 else

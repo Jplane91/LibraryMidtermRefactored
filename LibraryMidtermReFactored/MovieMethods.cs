@@ -43,8 +43,7 @@ namespace LibraryMidtermReFactored
             foreach(var movie in list)
             {
                 Console.WriteLine();
-                Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director + "\nRating: " + movie.Rating +
-                    "\nYear Released: " + movie.Year + "\nIMDB: " + movie.IMDB + "\nFormat: " + movie.Format + "\nStatus: " + movie.Status);
+                Console.WriteLine("Title: " + movie.Title + "\nDirector: " + movie.Director);
             }
         }
 
