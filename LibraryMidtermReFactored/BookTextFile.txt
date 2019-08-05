@@ -1,6 +1,5 @@
-Moby Dick|1851|Fiction|Book|in|585|Herman Melville|Paperback
-The Adventures of Huckleberry Finn|1884|Classic Lit|Book|in|366|Mark Twain|Hardcover
-Alice's Adventure in Wonderland|1862|Classic Lit|Book|in|200|Lewis Carrol|Paperback
+Moby Dick|1851|Fiction|Book|checked out until 8/19/2019 1:53:08 PM|585|Herman Melville|Paperback
+Alice's Adventure in Wonderland|1862|Classic Lit|Book|checked out until 8/19/2019 1:53:41 PM|200|Lewis Carrol|Paperback
 A Brief History of Time|1988|Non-Fiction|Book|in|256|Stephen Hawking|Hardbook
 Sapiens: A Brief History of Humankind|2011|Non-Fiction|Book|in|443|Yuval Noah Harari|Hardcover
 East of Eden|1962|Fiction|Book|in|1962|John Steinbeck|Paperback

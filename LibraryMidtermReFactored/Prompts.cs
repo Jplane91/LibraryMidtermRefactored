@@ -345,9 +345,10 @@ namespace LibraryMidtermReFactored
                         if (book.Status == "in")
                         {
                             Console.WriteLine($"You have checked out {book.Title} until {answer}");
+                            string originalLineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
                             book.Status = $"checked out until {answer}";
                             string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
-                            WriteToBookTextFile(bookList, lineOfInfo);
+                            WriteToBookTextFile(bookList, lineOfInfo, originalLineOfInfo);
                         }
                         else
                         {
@@ -361,7 +362,7 @@ namespace LibraryMidtermReFactored
             }
             return ans;
         }
-        public static void WriteToBookTextFile(List<Book> bookList, string line1)
+        public static void WriteToBookTextFile(List<Book> bookList, string line1, string line2) 
         {
             //take in the wanted line as a string array, make it a single string, rewrite the entire text file
             var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
@@ -373,7 +374,15 @@ namespace LibraryMidtermReFactored
                 newNewLines[count] = i;
                 count++;
             }
-            newNewLines[oldLines.Length-1] = line1;
+            int count1 = 0;
+            foreach(string j in newNewLines)
+            {
+                count1++;
+                if(j == line2)
+                {
+                    newNewLines[count1-1] = line1;
+                }
+            }
             File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
 
