@@ -1,28 +1,30 @@
 {
   "format": 1,
   "restore": {
-    "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {}
+    "C:\\Users\\Joe\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj": {}
   },
   "projects": {
-    "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj": {
+    "C:\\Users\\Joe\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
+        "projectUniqueName": "C:\\Users\\Joe\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj",
         "projectName": "LibraryMidtermReFactored",
-        "projectPath": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/LibraryMidtermReFactored.csproj",
-        "packagesPath": "/Users/mac/.nuget/packages/",
-        "outputPath": "/Users/mac/Projects/LibraryMidtermRefactored/LibraryMidtermReFactored/obj/",
+        "projectPath": "C:\\Users\\Joe\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj",
+        "packagesPath": "C:\\Users\\Joe\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Joe\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/Users/mac/.config/NuGet/NuGet.Config"
+          "C:\\Users\\Joe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

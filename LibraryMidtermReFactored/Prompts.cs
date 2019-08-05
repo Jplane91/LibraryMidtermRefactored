@@ -14,16 +14,24 @@ namespace LibraryMidtermReFactored
         public static void AskToSearchorAdd()
         {
 
-            Console.WriteLine("Would you like to search or add to the database");
+            Console.WriteLine("What would you like to do?");
+            Console.WriteLine("1. Check an item out.");
+            Console.WriteLine("2. Donate to the Library.");
+            Console.WriteLine("3. Quit.");
             string searchOrAddResonse = Console.ReadLine().ToLower();
-            if (searchOrAddResonse == "search")
+            if (searchOrAddResonse == "1")
             {
                 MovieBookorMusic();
             }
 
-            else if (searchOrAddResonse == "add")
+            else if (searchOrAddResonse == "2")
             {
                 AskWhichMediaToAdd();
+            }
+            else if(searchOrAddResonse == "3")
+                {
+               Console.WriteLine("Have a nice day!");
+               return;
             }
 
             else
@@ -67,84 +75,119 @@ namespace LibraryMidtermReFactored
 
         public static void MovieBookorMusic()
         {
-            Console.WriteLine("Are you looking for a book, movie, or album?");
+            Console.WriteLine("What would you like to checkout?\n1.Book\n2.Movie\n3.Music\n4.Quit");
             string userMediaPreference = Console.ReadLine().ToLower();
 
-            if (userMediaPreference == "book")
+            if (userMediaPreference == "1")
             {
                 List<Book> bookInfo = BookMethods.BookTxtToList();
-                Console.WriteLine("Would you like to seach by title, author, or show all");
+                Console.WriteLine("We have a lot of books.");
+                Console.WriteLine("1. Search by title.\n2. Search by author\n3.Full List\n4.Quit");
                 string userSearchPreference = Console.ReadLine().ToLower();
-                if (userSearchPreference == "all" || userMediaPreference == "show all")
-                {
-                    BookMethods.PrintBookList(bookInfo);
-                    AskToSearchOrCheckOut();
-
-                }
-
-                else if (userSearchPreference == "title")
+                if (userSearchPreference == "1")
                 {
                     BookMethods.SearchBookTitle(bookInfo);
                     AskToSearchOrCheckOut();
                 }
 
-                else if (userSearchPreference == "author")
+                else if (userSearchPreference == "2")
                 {
                     BookMethods.SearchBookAuthor(bookInfo);
                     AskToSearchOrCheckOut();
+                }
 
+                else if (userSearchPreference == "3")
+                {
+                    BookMethods.PrintBookList(bookInfo);
+                    AskToSearchOrCheckOut();
+                }
+                else if(userSearchPreference == "4")
+                {
+                    Console.WriteLine("Have a nice day!");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("That was not a valid response.");
+                    MovieBookorMusic();
                 }
 
             }
-
-            else if (userMediaPreference == "album")
-            {
-                List<Music> musicInfo = MusicMethods.MusicTxtToList();
-                Console.WriteLine("Would you like to seach by album title, artist, or show all");
-                string userSearchPreference = Console.ReadLine().ToLower();
-                if (userSearchPreference == "all" || userSearchPreference == "show all")
-                {
-                    MusicMethods.PrintMusicList(musicInfo);
-                    AskToSearchOrCheckOut();
-                }
-
-                else if (userSearchPreference == "title")
-                {
-                    MusicMethods.SearchMusicTitle(musicInfo);
-                    AskToSearchOrCheckOut();
-                }
-
-                else if (userSearchPreference == "artist")
-                {
-                    MusicMethods.SearchMusicArtist(musicInfo);
-                    AskToSearchOrCheckOut();
-                }
-
-            }
-
-            else if (userMediaPreference == "movie")
+            else if (userMediaPreference == "2")
             {
                 List<Movie> movieInfo = MovieMethods.MovieTxtToList();
-                Console.WriteLine("Would you like to seach by movie title, director, or show all");
+                Console.WriteLine("We have a lot of movies.\n1.Search by title.\n2.Search by director.\n3.Full List\n4.Quit.");
                 string userSearchPreference = Console.ReadLine().ToLower();
-                if (userSearchPreference == "all" || userSearchPreference == "show all")
-                {
-                    MovieMethods.PrintMovieList(movieInfo);
-                    AskToSearchOrCheckOut();
-                }
-
-                else if (userSearchPreference == "title" || userMediaPreference == "movie title")
+                if (userSearchPreference == "1")
                 {
                     MovieMethods.SearchMovieTitle(movieInfo);
                     AskToSearchOrCheckOut();
                 }
 
-                else if (userSearchPreference == "director")
+                else if (userSearchPreference == "2")
                 {
                     MovieMethods.SearchMovieDirector(movieInfo);
                     AskToSearchOrCheckOut();
                 }
+
+                else if (userSearchPreference == "3")
+                {
+                    MovieMethods.PrintMovieList(movieInfo);
+                    AskToSearchOrCheckOut();
+                }
+                else if (userSearchPreference == "4")
+                {
+                    Console.WriteLine("Have a nice day!");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("That was not a valid response.");
+                    MovieBookorMusic();
+                }
             }
+            else if (userMediaPreference == "3")
+            {
+                List<Music> musicInfo = MusicMethods.MusicTxtToList();
+                Console.WriteLine("We have a lot of music albums!\n1.Search by Title.\n2.Search by Artist.\n3.Full List.\n4.Quit.");
+                string userSearchPreference = Console.ReadLine().ToLower();
+                if (userSearchPreference == "1")
+                {
+                    MusicMethods.SearchMusicTitle(musicInfo);
+                    AskToSearchOrCheckOut();
+                }
+
+                else if (userSearchPreference == "2")
+                {
+                    MusicMethods.SearchMusicArtist(musicInfo);
+                    AskToSearchOrCheckOut();
+                }
+
+                else if (userSearchPreference == "3")
+                {
+                    MusicMethods.PrintMusicList(musicInfo);
+                    AskToSearchOrCheckOut();
+                }
+                else if(userSearchPreference == "4")
+                {
+                    Console.WriteLine("Have a nice day!");
+                    return;
+                }
+                else
+                {
+                    Console.WriteLine("That was not a valid response.");
+                    MovieBookorMusic();
+                }
+                      
+
+            }
+            else
+            {
+                Console.WriteLine("That was not a valid response.");
+                MovieBookorMusic();
+            }
+
+            
         }
 
         public static void AskToSearchOrCheckOut()
@@ -169,7 +212,7 @@ namespace LibraryMidtermReFactored
 
             else
             {
-                Console.WriteLine("Invalid Resonse");
+                Console.WriteLine("Invalid Response");
                 AskToSearchOrCheckOut();
             }
 
