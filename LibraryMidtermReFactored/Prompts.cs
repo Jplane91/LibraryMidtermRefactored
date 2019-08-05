@@ -394,6 +394,34 @@ namespace LibraryMidtermReFactored
             }
             return false;
         }
+        public static bool CheckInMusic(List<Music> musicList)
+        {
+            Console.WriteLine("What title are you checking in?");
+            string userTitleToCheckIn = Console.ReadLine().ToLower();
+            foreach (var music in musicList)
+            {
+                if (music.Title.ToLower().Contains(userTitleToCheckIn))
+                {
+                    Console.WriteLine($"Are you checking in {music.Title}? Y/N");
+                    string userYesNo = Console.ReadLine().ToLower();
+                    if (userYesNo == "y" || userYesNo == "yes")
+                    {
+                        Console.WriteLine($"Thank you for bringing back {music.Title}.");
+                        music.Status.Replace($"check out until {null}", "in");
+                        return true;
+                    }
+                    else if(userYesNo == "n" || userYesNo == "no")
+                    {
+                        Console.WriteLine("Ok, thanks anyway.");
+                        return false;
+                    }
+                    return true;
+
+                }   
+            }
+            return false;
+
+        }
 
         public static void NotInStockPrompt()
         {
