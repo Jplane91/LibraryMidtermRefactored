@@ -199,6 +199,11 @@ namespace LibraryMidtermReFactored
                       
 
             }
+            else if (userMediaPreference == "4")
+            {
+                Console.WriteLine("Have a nice day!");
+                Environment.Exit(0);
+            }
             else
             {
                 Console.WriteLine("That was not a valid response.");
