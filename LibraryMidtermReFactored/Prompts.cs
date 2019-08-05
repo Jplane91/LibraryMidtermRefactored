@@ -65,16 +65,22 @@ namespace LibraryMidtermReFactored
             if (mediaToAddResponse == "1")
             {
                 BookMethods.AddToBookList(bookInfo);
+                Console.WriteLine("Thank you for donating! We appreciate it!");
+                AskToSearchReturnOrAdd();
             }
 
             else if (mediaToAddResponse == "2")
             {
                 MovieMethods.AddToMovieList(movieInfo);
+                Console.WriteLine("Thank you for donating! We appreciate it!");
+                AskToSearchReturnOrAdd();
             }
 
             else if (mediaToAddResponse == "3")
             {
                 MusicMethods.AddToMusicList(musicInfo);
+                Console.WriteLine("Thank you for donating! We appreciate it!");
+                AskToSearchReturnOrAdd();
             }
 
             else
