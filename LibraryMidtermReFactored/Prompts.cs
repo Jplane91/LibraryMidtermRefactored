@@ -33,7 +33,7 @@ namespace LibraryMidtermReFactored
             }
             else if (searchOrAddResonse == "3")
             {
-           
+                WhichMediaToCheckIn();
             }
             else if(searchOrAddResonse == "4")
             {
@@ -297,7 +297,33 @@ namespace LibraryMidtermReFactored
             return userCheckOutType;
 
         }
+        public static string WhichMediaToCheckIn() 
+        {
+            List<Movie> movieInfo = MovieMethods.MovieTxtToList();
+            List<Music> musicInfo = MusicMethods.MusicTxtToList();
+            List<Book> bookInfo = BookMethods.BookTxtToList();
 
+            Console.WriteLine("Great! and what are you checking in today?\n1.Book\n2.Movie\n3.Music Album");
+            string userCheckInType = Console.ReadLine().ToLower();
+            if (userCheckInType == "1")
+            {
+                CheckInBook(bookInfo);
+            }
+            else if (userCheckInType == "2")
+            {
+                CheckInMovie(movieInfo);
+            }
+            else if (userCheckInType == "3")
+            {
+                CheckInMusic(musicInfo);
+            }
+            {
+                Console.WriteLine("Invalid Response");
+                WhichMediaToCheckIn();
+            }
+            return userCheckInType;
+
+        }
         public static bool AskForBookTitleToCheckOut(List<Book> bookList) //returns fall if there is no match
         {
 
@@ -340,7 +366,7 @@ namespace LibraryMidtermReFactored
             String.Format("{0:M/d/yyyy}", answer);
 
             Console.WriteLine("Which Movie would you like to check out");
-            string userTitleToCheckOut = Console.ReadLine();
+            string userTitleToCheckOut = Console.ReadLine().ToLower();
             foreach (var movie in movieList)
             {
                 if (movie.Title.ToLower().Contains(userTitleToCheckOut))
@@ -423,7 +449,7 @@ namespace LibraryMidtermReFactored
             return false;
 
         }
-        public static bool CheckInMovie(List<Music> movieList)
+        public static bool CheckInMovie(List<Movie> movieList)
         {
             Console.WriteLine("What title are you checking in?");
             string userTitleToCheckIn = Console.ReadLine().ToLower();
