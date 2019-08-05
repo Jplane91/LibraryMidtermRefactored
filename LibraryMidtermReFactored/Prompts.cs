@@ -444,7 +444,7 @@ namespace LibraryMidtermReFactored
                             string originalLineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
                             movie.Status = $"checked out until {answer}";
                             string lineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
-                            WriteToBookTextFileCheckOut(movieList, lineOfInfo, originalLineOfInfo);
+                            WriteToMovieTextFileCheckOut(movieList, lineOfInfo, originalLineOfInfo);
                         }
                         else
                         {
@@ -456,7 +456,7 @@ namespace LibraryMidtermReFactored
                             string lineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
                             if (ans1 == "y")
                             {
-                                WriteToBookFileCheckIn(movieList, lineOfInfo, originalLineOfInfo);
+                                WriteToMovieFileCheckIn(movieList, lineOfInfo, originalLineOfInfo);
 
                             }
                         }
@@ -536,7 +536,7 @@ namespace LibraryMidtermReFactored
                             string originalLineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
                             music.Status = $"checked out until {answer}";
                             string lineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
-                            WriteToBookTextFileCheckOut(musicList, lineOfInfo, originalLineOfInfo);
+                            WriteToMusicTextFileCheckOut(musicList, lineOfInfo, originalLineOfInfo);
                         }
                         else
                         {
@@ -548,7 +548,7 @@ namespace LibraryMidtermReFactored
                             string lineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
                             if (ans1 == "y")
                             {
-                                WriteToBookFileCheckIn(musicList, lineOfInfo, originalLineOfInfo);
+                                WriteToMusicFileCheckIn(musicList, lineOfInfo, originalLineOfInfo);
 
                             }
                         }

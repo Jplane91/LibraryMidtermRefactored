@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{6158A5A3-9211-4C60-8FBC-398890B968BF}|Default">
+  <MonoDevelop.Ide.ItemProperties.LibraryMidtermReFactored PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Prompts.cs">
+    <Files>
+      <File FileName="Book.cs" Line="1" Column="1" />
+      <File FileName="BookTextFile.txt" />
+      <File FileName="Program.cs" />
+      <File FileName="Prompts.cs" Line="553" Column="30" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="LibraryMidtermReFactored" expanded="True">
+            <Node name="LibraryMidtermReFactored" expanded="True">
+              <Node name="Prompts.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
