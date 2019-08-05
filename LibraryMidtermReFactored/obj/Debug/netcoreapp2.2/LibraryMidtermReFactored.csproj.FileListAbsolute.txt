@@ -29,3 +29,14 @@ C:\Users\Joe\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\
 C:\Users\Joe\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.AssemblyInfo.cs
 C:\Users\Joe\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.dll
 C:\Users\Joe\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.pdb
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\bin\Debug\netcoreapp2.2\LibraryMidtermReFactored.deps.json
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\bin\Debug\netcoreapp2.2\LibraryMidtermReFactored.runtimeconfig.json
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\bin\Debug\netcoreapp2.2\LibraryMidtermReFactored.runtimeconfig.dev.json
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\bin\Debug\netcoreapp2.2\LibraryMidtermReFactored.dll
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\bin\Debug\netcoreapp2.2\LibraryMidtermReFactored.pdb
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.csprojAssemblyReference.cache
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.csproj.CoreCompileInputs.cache
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.AssemblyInfoInputs.cache
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.AssemblyInfo.cs
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.dll
+C:\Users\josep\source\repos\LibraryMidtermRefactored\LibraryMidtermReFactored\obj\Debug\netcoreapp2.2\LibraryMidtermReFactored.pdb

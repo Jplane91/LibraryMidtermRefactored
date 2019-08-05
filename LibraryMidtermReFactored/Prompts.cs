@@ -394,6 +394,63 @@ namespace LibraryMidtermReFactored
             }
             return false;
         }
+
+        public static bool CheckInBook(List<Book> bookList)
+        {
+            Console.WriteLine("What title are you checking in?");
+            string userTitleToCheckIn = Console.ReadLine().ToLower();
+            foreach (var book in bookList)
+            {
+                if (book.Title.ToLower().Contains(userTitleToCheckIn))
+                {
+                    Console.WriteLine($"Are you checking in {book.Title}? Y/N");
+                    string userYesNo = Console.ReadLine().ToLower();
+                    if (userYesNo == "y" || userYesNo == "yes")
+                    {
+                        Console.WriteLine($"Thank you for bringing back {book.Title}.");
+                        book.Status.Replace($"check out until {null}", "in");
+                        return true;
+                    }
+                    else if (userYesNo == "n" || userYesNo == "no")
+                    {
+                        Console.WriteLine("Ok, thanks anyway.");
+                        return false;
+                    }
+                    return true;
+
+                }
+            }
+            return false;
+
+        }
+        public static bool CheckInMovie(List<Music> movieList)
+        {
+            Console.WriteLine("What title are you checking in?");
+            string userTitleToCheckIn = Console.ReadLine().ToLower();
+            foreach (var movie in movieList)
+            {
+                if (movie.Title.ToLower().Contains(userTitleToCheckIn))
+                {
+                    Console.WriteLine($"Are you checking in {movie.Title}? Y/N");
+                    string userYesNo = Console.ReadLine().ToLower();
+                    if (userYesNo == "y" || userYesNo == "yes")
+                    {
+                        Console.WriteLine($"Thank you for bringing back {movie.Title}.");
+                        movie.Status.Replace($"check out until {null}", "in");
+                        return true;
+                    }
+                    else if (userYesNo == "n" || userYesNo == "no")
+                    {
+                        Console.WriteLine("Ok, thanks anyway.");
+                        return false;
+                    }
+                    return true;
+
+                }
+            }
+            return false;
+
+        }
         public static bool CheckInMusic(List<Music> musicList)
         {
             Console.WriteLine("What title are you checking in?");
