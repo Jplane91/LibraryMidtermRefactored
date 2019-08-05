@@ -317,6 +317,7 @@ namespace LibraryMidtermReFactored
             {
                 CheckInMusic(musicInfo);
             }
+            else
             {
                 Console.WriteLine("Invalid Response");
                 WhichMediaToCheckIn();
