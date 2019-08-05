@@ -417,7 +417,75 @@ namespace LibraryMidtermReFactored
             }
             File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
-        public static void WriteToMovieTextFile(List<Movie> movieList, string line1)
+        public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns fall if there is no match
+        {
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(14);
+            String.Format("{0:M/d/yyyy}", answer);
+            bool ans = true;
+            Console.WriteLine("Which title would you like to check out");
+            string userTitleToCheckOut = Console.ReadLine().ToLower();
+            foreach (var movie in movieList)
+            {
+                if (movie.Title.ToLower().Contains(userTitleToCheckOut))
+                {
+                    Console.WriteLine($"Would you like to check out {movie.Title} by {movie.Director}? \nY/N");
+                    string userResponse = Console.ReadLine().ToLower();
+                    if (userResponse == "y")
+                    {
+                        if (movie.Status == "in")
+                        {
+                            Console.WriteLine($"You have checked out {movie.Title} until {answer}");
+                            string originalLineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
+                            movie.Status = $"checked out until {answer}";
+                            string lineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
+                            WriteToBookTextFileCheckOut(movieList, lineOfInfo, originalLineOfInfo);
+                        }
+                        else
+                        {
+                            Console.WriteLine("This book is aleady checked out");
+                            Console.WriteLine("Would you like to check it in?");
+                            string ans1 = Console.ReadLine();
+                            string originalLineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
+                            movie.Status = "in";
+                            string lineOfInfo = movie.Title + '|' + movie.Year + '|' + movie.Genre + '|' + movie.MediaType + '|' + movie.Status + '|' + movie.Rating + '|' + movie.Director + '|' + movie.Format;
+                            if (ans1 == "y")
+                            {
+                                WriteToBookFileCheckIn(movieList, lineOfInfo, originalLineOfInfo);
+
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+            return ans;
+        }
+        public static void WriteToMovieFileCheckIn(List<Movie> movieList, string line1, string line2)
+        {
+            var oldLines = File.ReadAllLines("../../../MovieTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            int count = 0;
+            foreach (string i in newLines)
+            {
+                newNewLines[count] = i;
+                count++;
+            }
+            int count1 = 0;
+            foreach (string j in newNewLines)
+            {
+                count1++;
+                if (j == line2)
+                {
+                    newNewLines[count1 - 1] = line1;
+                }
+            }
+            File.WriteAllLines("../../../MovieTextFile.txt", newNewLines);
+        }
+        public static void WriteToMovieTextFileCheckOut(List<Movie> movieList, string line1, string line2)
         {
             //take in the wanted line as a string array, make it a single string, rewrite the entire text file
             var oldLines = File.ReadAllLines("../../../MovieTextFile.txt");
@@ -429,10 +497,87 @@ namespace LibraryMidtermReFactored
                 newNewLines[count] = i;
                 count++;
             }
-            newNewLines[oldLines.Length - 1] = line1;
+            int count1 = 0;
+            foreach (string j in newNewLines)
+            {
+                count1++;
+                if (j == line2)
+                {
+                    newNewLines[count1 - 1] = line1;
+                }
+            }
             File.WriteAllLines("../../../MovieTextFile.txt", newNewLines);
         }
-        public static void WriteToMusicTextFile(List<Music> musicList, string line1)
+
+        public static bool AskForMusicTitleToCheckOut(List<Music> musicList) //returns fall if there is no match
+        {
+            DateTime today = DateTime.Now;
+            DateTime answer = today.AddDays(14);
+            String.Format("{0:M/d/yyyy}", answer);
+            bool ans = true;
+            Console.WriteLine("Which title would you like to check out");
+            string userTitleToCheckOut = Console.ReadLine().ToLower();
+            foreach (var music in musicList)
+            {
+                if (music.Title.ToLower().Contains(userTitleToCheckOut))
+                {
+                    Console.WriteLine($"Would you like to check out {music.Title} by {music.Artist}? \nY/N");
+                    string userResponse = Console.ReadLine().ToLower();
+                    if (userResponse == "y")
+                    {
+                        if (music.Status == "in")
+                        {
+                            Console.WriteLine($"You have checked out {music.Title} until {answer}");
+                            string originalLineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
+                            music.Status = $"checked out until {answer}";
+                            string lineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
+                            WriteToBookTextFileCheckOut(musicList, lineOfInfo, originalLineOfInfo);
+                        }
+                        else
+                        {
+                            Console.WriteLine("This book is aleady checked out");
+                            Console.WriteLine("Would you like to check it in?");
+                            string ans1 = Console.ReadLine();
+                            string originalLineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
+                            music.Status = "in";
+                            string lineOfInfo = music.Title + '|' + music.Year + '|' + music.Genre + '|' + music.MediaType + '|' + music.Status + '|' + music.Rating + '|' + music.Artist + '|' + music.Format;
+                            if (ans1 == "y")
+                            {
+                                WriteToBookFileCheckIn(musicList, lineOfInfo, originalLineOfInfo);
+
+                            }
+                        }
+                    }
+
+
+                }
+
+            }
+            return ans;
+        }
+        public static void WriteToMusicFileCheckIn(List<Music> musicList, string line1, string line2)
+        {
+            var oldLines = File.ReadAllLines("../../../MusicTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            int count = 0;
+            foreach (string i in newLines)
+            {
+                newNewLines[count] = i;
+                count++;
+            }
+            int count1 = 0;
+            foreach (string j in newNewLines)
+            {
+                count1++;
+                if (j == line2)
+                {
+                    newNewLines[count1 - 1] = line1;
+                }
+            }
+            File.WriteAllLines("../../../MusicTextFile.txt", newNewLines);
+        }
+        public static void WriteToMusicTextFileCheckOut(List<Music> musicList, string line1, string line2)
         {
             //take in the wanted line as a string array, make it a single string, rewrite the entire text file
             var oldLines = File.ReadAllLines("../../../MusicTextFile.txt");
@@ -444,77 +589,17 @@ namespace LibraryMidtermReFactored
                 newNewLines[count] = i;
                 count++;
             }
-            newNewLines[oldLines.Length - 1] = line1;
+            int count1 = 0;
+            foreach (string j in newNewLines)
+            {
+                count1++;
+                if (j == line2)
+                {
+                    newNewLines[count1 - 1] = line1;
+                }
+            }
             File.WriteAllLines("../../../MusicTextFile.txt", newNewLines);
         }
-
-        public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
-        {
-
-            DateTime today = DateTime.Now;
-            DateTime answer = today.AddDays(14);
-            String.Format("{0:M/d/yyyy}", answer);
-
-            Console.WriteLine("Which Movie would you like to check out");
-            string userTitleToCheckOut = Console.ReadLine().ToLower();
-            foreach (var movie in movieList)
-            {
-                if (movie.Title.ToLower().Contains(userTitleToCheckOut))
-                {
-                    Console.WriteLine($"Would you like to check out {movie.Title}? Y/N");
-                    string userInput = Console.ReadLine().ToLower();
-                    if (userInput == "y")
-                    {
-                        Console.WriteLine("You have checked out " + movie.Title);
-                        if (movie.Status == "in")
-                        {
-                            Console.WriteLine($"You have checked this out until {answer}");
-                            movie.Status.Replace("in", $"checked out until {answer}");
-                            return true;
-                        }
-                        return true;
-                    }
-                }
-
-            }
-
-            return false;
-        }
-
-        public static bool AskForMusicTitleToCheckOut(List<Music> musicList) //returns false if there is no match
-        {
-            DateTime today = DateTime.Now;
-            DateTime answer = today.AddDays(14);
-            String.Format("{0:M/d/yyyy}", answer);
-
-            Console.WriteLine("Which title would you like to check out");
-            string userTitleToCheckOut = Console.ReadLine().ToLower();
-            foreach (var music in musicList)
-            {
-                if (music.Title.ToLower().Contains(userTitleToCheckOut))
-                {                  
-                    Console.WriteLine($"Would you like to check out {music.Title}? Y/N");
-                    string userInput = Console.ReadLine();
-                    if (userInput == "y")
-                    {
-                        if (music.Status == "in")
-                        {
-                            Console.WriteLine("You have checked out " + music.Title);
-                            Console.WriteLine($"You have checked this out until {answer}");
-                            music.Status.Replace("in","out");
-                            return true;
-                        }
-                        else if(music.Status == "out")
-                        {
-                            NotInStockPrompt();
-                        }
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
         public static bool CheckInBook(List<Book> bookList)
         {
             Console.WriteLine("What title are you checking in?");
