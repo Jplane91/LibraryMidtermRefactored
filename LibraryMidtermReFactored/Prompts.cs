@@ -344,9 +344,9 @@ namespace LibraryMidtermReFactored
                     {
                         if (book.Status == "in")
                         {
-                            string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
                             Console.WriteLine($"You have checked out {book.Title} until {answer}");
-                            book.Status.Replace("in", $"checked out until {answer}");
+                            book.Status = $"checked out until {answer}";
+                            string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
                             WriteToBookTextFile(bookList, lineOfInfo);
                         }
                         else
@@ -370,14 +370,10 @@ namespace LibraryMidtermReFactored
             int count = 0;
             foreach(string i in newLines)
             {
-                count++;
                 newNewLines[count] = i;
+                count++;
             }
             newNewLines[oldLines.Length-1] = line1;
-            foreach(string j in  newNewLines)
-            {
-                Console.WriteLine(j);
-            }
             File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
 

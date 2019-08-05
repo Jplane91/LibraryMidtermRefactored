@@ -1,4 +1,4 @@
-
+Moby Dick|1851|Fiction|Book|in|585|Herman Melville|Paperback
 The Adventures of Huckleberry Finn|1884|Classic Lit|Book|in|366|Mark Twain|Hardcover
 Alice's Adventure in Wonderland|1862|Classic Lit|Book|in|200|Lewis Carrol|Paperback
 A Brief History of Time|1988|Non-Fiction|Book|in|256|Stephen Hawking|Hardbook
@@ -10,5 +10,3 @@ Harry Potter and the Sorcerer's Stone|1997|Young Adult|Book|in|336|JK Rowling|Pa
 The Brother's Karamazov|1880|Classic Lit|Book|in|824|Fyodor Dostoevsky|Paperback
 Blood Meridian|1985|Western|Book|in|337|Cormac McCarthy|Paperback
 Sometimes a Great Notion|1964|Fiction|Book|in|715|Ken Kesey|Paperback
-Murder on the Orient Express|1934|Mystery|Book|in|347|Agatha Christie|Audiobook
-Moby Dick|1851|Fiction|Book|in|585|Herman Melville|Paperback
