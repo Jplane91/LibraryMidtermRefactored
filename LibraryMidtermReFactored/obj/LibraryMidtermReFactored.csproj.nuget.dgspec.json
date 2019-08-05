@@ -1,0 +1,60 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\josep\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\josep\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\josep\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj",
+        "projectName": "LibraryMidtermReFactored",
+        "projectPath": "C:\\Users\\josep\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\LibraryMidtermReFactored.csproj",
+        "packagesPath": "C:\\Users\\josep\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\josep\\source\\repos\\LibraryMidtermRefactored\\LibraryMidtermReFactored\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\josep\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
