@@ -365,8 +365,16 @@ namespace LibraryMidtermReFactored
         {
             //take in the wanted line as a string array, make it a single string, rewrite the entire text file
             var oldLines = File.ReadAllLines("../../../BookTextFile.txt");
-            var newLines = oldLines.Where(line => line != line1);
-            File.WriteAllLines("../../../BookTextFile.txt", newLines);
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            foreach(string i in newLines)
+            {
+                int count = 0;
+                count++;
+                newNewLines[count] = i;
+            }
+            newNewLines[oldLines.Length] = line1;
+            File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
 
         public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
