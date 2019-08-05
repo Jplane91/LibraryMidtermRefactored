@@ -546,13 +546,13 @@ namespace LibraryMidtermReFactored
         {
             Console.WriteLine("Would you like to return to the main menu or to exit?");
             string userMainMenuOrExitResponse = Console.ReadLine().ToLower();
-            if (userMainMenuOrExitResponse == "main menu" || userMainMenuOrExitResponse == "main" || userMainMenuOrExitResponse == "menu")
+            if (userMainMenuOrExitResponse == "main menu" || userMainMenuOrExitResponse == "main" || userMainMenuOrExitResponse == "menu" || userMainMenuOrExitResponse == "y" || userMainMenuOrExitResponse == "yes")
             {
                 Console.Clear();
                 AskToSearchReturnOrAdd();
             }
 
-            else if (userMainMenuOrExitResponse == "exit")
+            else if (userMainMenuOrExitResponse == "exit" || userMainMenuOrExitResponse == "n" || userMainMenuOrExitResponse == "no")
             {
                 Console.WriteLine("Have a good day!");
                 System.Environment.Exit(1);
