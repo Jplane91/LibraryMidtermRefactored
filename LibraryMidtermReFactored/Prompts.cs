@@ -344,9 +344,10 @@ namespace LibraryMidtermReFactored
                     {
                         if (book.Status == "in")
                         {
+                            string lineOfInfo = book.Title + '|' + book.Year + '|' + book.Genre + '|' + book.MediaType + '|' + book.Status + '|' + book.Pages + '|' + book.Author + '|' + book.Format;
                             Console.WriteLine($"You have checked out {book.Title} until {answer}");
                             book.Status.Replace("in", $"checked out until {answer}");
-                            //write to file
+                            WriteToBookTextFile(bookList, lineOfInfo);
                         }
                         else
                         {
