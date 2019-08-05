@@ -376,6 +376,36 @@ namespace LibraryMidtermReFactored
             newNewLines[oldLines.Length-1] = line1;
             File.WriteAllLines("../../../BookTextFile.txt", newNewLines);
         }
+        public static void WriteToMovieTextFile(List<Movie> movieList, string line1)
+        {
+            //take in the wanted line as a string array, make it a single string, rewrite the entire text file
+            var oldLines = File.ReadAllLines("../../../MovieTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            int count = 0;
+            foreach (string i in newLines)
+            {
+                newNewLines[count] = i;
+                count++;
+            }
+            newNewLines[oldLines.Length - 1] = line1;
+            File.WriteAllLines("../../../MovieTextFile.txt", newNewLines);
+        }
+        public static void WriteToMusicTextFile(List<Music> musicList, string line1)
+        {
+            //take in the wanted line as a string array, make it a single string, rewrite the entire text file
+            var oldLines = File.ReadAllLines("../../../MusicTextFile.txt");
+            var newLines = oldLines.Where(line => line != line1);//issue is that with this line we are rewriting everything that isnt the updated line
+            var newNewLines = new string[oldLines.Length];
+            int count = 0;
+            foreach (string i in newLines)
+            {
+                newNewLines[count] = i;
+                count++;
+            }
+            newNewLines[oldLines.Length - 1] = line1;
+            File.WriteAllLines("../../../MusicTextFile.txt", newNewLines);
+        }
 
         public static bool AskForMovieTitleToCheckOut(List<Movie> movieList) //returns false if there is no match
         {
