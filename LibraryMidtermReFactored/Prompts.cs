@@ -11,25 +11,36 @@ namespace LibraryMidtermReFactored
             Console.WriteLine("Welcome to the Online Library Catalog");
         }
 
-        public static void AskToSearchorAdd()
+        public static void AskToSearchReturnOrAdd()
         {
-
-            Console.WriteLine("Would you like to search or add to the database");
-            string searchOrAddResonse = Console.ReadLine().ToLower();
-            if (searchOrAddResonse == "search")
+            
+            Console.WriteLine("Would you like to search, return an item, or add to the database\n(Enter 1.Search, 2.Return, 3.Add, 4.Exit)");
+            string searchReturnOrAddResonse = Console.ReadLine().ToLower();
+            if (searchReturnOrAddResonse == "search" || searchReturnOrAddResonse == "1")
             {
                 MovieBookorMusic();
             }
 
-            else if (searchOrAddResonse == "add")
+            else if(searchReturnOrAddResonse == "return"|| searchReturnOrAddResonse == "2")
+            {
+      
+            }
+
+            else if (searchReturnOrAddResonse == "add" || searchReturnOrAddResonse == "3")
             {
                 AskWhichMediaToAdd();
             }
 
-            else
+            else if (searchReturnOrAddResonse == "exit" || searchReturnOrAddResonse == "4")
             {
-                Console.WriteLine("Invalid response");
-                AskToSearchorAdd();
+                Console.WriteLine("Have a good day!");
+                System.Environment.Exit(1);
+            }
+
+            else 
+            {
+                Console.WriteLine("Invalid Response");
+                AskToSearchReturnOrAdd();
             }
 
 
@@ -46,16 +57,19 @@ namespace LibraryMidtermReFactored
             if (mediaToAddResponse == "book")
             {
                 BookMethods.AddToBookList(bookInfo);
+                ReturnToMainMenuOrExit();
             }
 
             else if (mediaToAddResponse == "movie")
             {
                 MovieMethods.AddToMovieList(movieInfo);
+                ReturnToMainMenuOrExit();
             }
 
             else if (mediaToAddResponse == "music")
             {
                 MusicMethods.AddToMusicList(musicInfo);
+                ReturnToMainMenuOrExit();
             }
 
             else
@@ -191,6 +205,11 @@ namespace LibraryMidtermReFactored
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
+                    }
                 }
 
                 else if (whichMediaType == "movie")
@@ -200,6 +219,11 @@ namespace LibraryMidtermReFactored
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
                     }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
+                    }
                 }
 
                 else
@@ -208,6 +232,11 @@ namespace LibraryMidtermReFactored
                     if (validate == false)
                     {
                         NotInStockPrompt(); //prompts to check out again, search again, or to exit
+                    }
+
+                    else
+                    {
+                        ReturnToMainMenuOrExit();
                     }
                 }
 
@@ -249,6 +278,7 @@ namespace LibraryMidtermReFactored
                     {
                         Console.WriteLine($"You have checked this out until {answer}");
                         book.Status.Replace("in", $"checked out until {answer}");
+
                         return true;
                     }
                     return true;
@@ -339,6 +369,29 @@ namespace LibraryMidtermReFactored
                     Console.WriteLine("Not a valid response");
                     loop = true;
                 }
+            }
+        }
+
+        public static void ReturnToMainMenuOrExit()
+        {
+            Console.WriteLine("Would you like to return to the main menu or to exit?");
+            string userMainMenuOrExitResponse = Console.ReadLine().ToLower();
+            if (userMainMenuOrExitResponse == "main menu" || userMainMenuOrExitResponse == "main" || userMainMenuOrExitResponse == "menu")
+            {
+                Console.Clear();
+                AskToSearchReturnOrAdd();
+            }
+
+            else if (userMainMenuOrExitResponse == "exit")
+            {
+                Console.WriteLine("Have a good day!");
+                System.Environment.Exit(1);
+            }
+
+            else
+            {
+                Console.WriteLine("Invalid input");
+                ReturnToMainMenuOrExit();
             }
         }
     }
